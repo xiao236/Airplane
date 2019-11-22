@@ -4,6 +4,7 @@ import java.net.*;
 
 public class ReservationServer {
     public static void main(String[] args) throws IOException {
+        String[] listofpassenger=null;
         ServerSocket serverSocket = new ServerSocket(4242);
         Socket socket = serverSocket.accept();
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -15,7 +16,8 @@ public class ReservationServer {
 
             switch (a){
                 case "Alaska":
-                    Alaska();
+                    Alaska al =new Alaska();
+                    listofpassenger= al.readClient();
                     break;
                 case "Delta":
                     break;
@@ -24,6 +26,9 @@ public class ReservationServer {
                 default:
                     break;
             }
+            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+            out.writeObject(listofpassenger);
+
         }
     }
 
