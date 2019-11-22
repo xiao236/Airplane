@@ -1,2 +1,2 @@
-public class Delta extends Airline {
+public class Delta implements Airline {
 }

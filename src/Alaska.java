@@ -1,2 +1,2 @@
-public class Alaska extends Airline {
+public class Alaska implements Airline {
 }

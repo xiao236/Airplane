@@ -1,2 +1,2 @@
-public class Southwest extends Airline {
+public class Southwest implements Airline {
 }
