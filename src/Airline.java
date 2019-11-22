@@ -3,4 +3,5 @@ import java.io.Serializable;
 
 public interface Airline extends Serializable {
     public String[] readClient() throws IOException;
+    public void addPassenger(Passenger p);
 }

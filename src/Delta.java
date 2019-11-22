@@ -4,6 +4,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Delta implements Airline {
+
+    public int currentPassengers;
+    public int maxPassengers;
+    public ArrayList<Passenger> passengers;
+
+    public Delta() {
+        currentPassengers = 0;
+        maxPassengers = 100;
+    }
+    public void addPassenger(Passenger p) {
+        currentPassengers++;
+        passengers.add(p);
+    }
     @Override
     public String[] readClient() throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("reservation.txt"));
