@@ -14,4 +14,9 @@ public class BoardingPass implements Serializable {
         this.age = age;
         this.gate = gate;
     }
+    public String toString() {
+        return "BOARDING PASS FOR FLIGHT 18000 WITH " + airline + " Airlines\nPASSENGER FIRST NAME: " +
+                firstName + "\nPASSENGER LAST NAME: " + lastName + "\nPASSENGER AGE: " + age +
+                "\nYou can now begin boarding at gate " + gate;
+    }
 }
