@@ -1,2 +1,4 @@
-public class Passenger implements Serializable{
+import java.io.Serializable;
+
+public class Passenger implements Serializable {
 }
