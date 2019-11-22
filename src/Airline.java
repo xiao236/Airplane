@@ -1,2 +1,2 @@
-public class Airline implements Serializable {
+public interface Airline extends Serializable {
 }
