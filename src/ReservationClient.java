@@ -7,21 +7,21 @@ import java.net.Socket;
 
 public class ReservationClient {
     public static void main(String args[]) throws IOException {
-        String DeltaAd = "Delta Airlines is proud to be one of the five premier Airlines at Purdue University.\n" +
-                "We are extremely happy to offer exceptional services, with free limited WiFi for all customers.\n" +
-                "Passengers who use T-Mobile as a cell phone carrier get additional benefits.\n" +
-                "We are also happy to offer power outlets in each seat for passenger use.\n" +
-                "We hope you choose to fly Delta as your next Airline.";
-        String SouthwestAd = "Southwest Airlines is proud to offer flights to Purdue University.\n" +
-                "We are happy to offer free in flight wifi, as well as our amazing snacks.\n" +
-                "In addition, we offer flights for much cheaper than other airlines, and offer two free checked bags\n" +
-                "We hope you choose Southwest for your next flight\n";
-        String AlaskaAd = "Alaska Airlines is proud to serve the strong and knowledgeable Boilermakers from Purdue University.\n" +
-                "We primarily fly westward, and often have stops in Alaska and California.\n" +
-                "We have first class amneties, even in coach class.\n" +
-                "We provide fun snacks, such as pretzels and goldfish.\n" +
-                "We also have comfortable seats and free WiFi.\n" +
-                "We hope you choose Alaska Airlines for your next itinerary.\n";
+        String DeltaAd = "<html>Delta Airlines is proud to be one of the five premier Airlines at Purdue University.<br/>" +
+                "We are extremely happy to offer exceptional services, with free limited WiFi for all customers.<br/>" +
+                "Passengers who use T-Mobile as a cell phone carrier get additional benefits.<br/>" +
+                "We are also happy to offer power outlets in each seat for passenger use.<br/>" +
+                "We hope you choose to fly Delta as your next Airline.</html>";
+        String SouthwestAd = "<html>Southwest Airlines is proud to offer flights to Purdue University.<br/>" +
+                "We are happy to offer free in flight wifi, as well as our amazing snacks.<br/>" +
+                "In addition, we offer flights for much cheaper than other airlines, and offer two free checked bags<br/>" +
+                "We hope you choose Southwest for your next flight</html>";
+        String AlaskaAd = "<html>Alaska Airlines is proud to serve the strong and knowledgeable Boilermakers from Purdue University.<br/>" +
+                "We primarily fly westward, and often have stops in Alaska and California.<br/>" +
+                "We have first class amneties, even in coach class.<br/>" +
+                "We provide fun snacks, such as pretzels and goldfish.<br/>" +
+                "We also have comfortable seats and free WiFi.<br/>" +
+                "We hope you choose Alaska Airlines for your next itinerary.</html>";
         String[] options1 = {
                 "Exit", "Book a Flight"
         };
