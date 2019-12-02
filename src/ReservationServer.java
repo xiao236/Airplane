@@ -52,19 +52,17 @@ public class ReservationServer {
             s.preAdd(p);
             br.readLine();
         }
+        br.close();
 
 
         ServerSocket serverSocket = new ServerSocket(4242);
         Socket socket = serverSocket.accept();
-        System.out.println(0);
         ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
         ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
         out.flush();
-        System.out.println(1);
         out.writeObject(d.currentPassengers + ":" + d.maxPassengers + ":" + Arrays.toString(d.passengers()) + ":" + a.currentPassengers + ":" + a.maxPassengers + ":" + Arrays.toString(a.passengers()) + ":"
         + s.currentPassengers + ":" + s.maxPassengers + ":" + Arrays.toString(s.passengers()));
         out.flush();
-        System.out.println(2);
 
         String airline = (String)in.readObject();
         System.out.println(airline);
