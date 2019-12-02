@@ -46,6 +46,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ReservationServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ReservationServer" />
+      <module name="Airplane" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Plugin" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
       <module name="Airplane" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -ea" />
@@ -67,6 +74,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ReservationClient" />
+        <item itemvalue="Application.ReservationServer" />
       </list>
     </recent_temporary>
   </component>
