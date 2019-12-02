@@ -24,4 +24,11 @@ public class Delta implements Airline {
         }
         return pass;
     }
+    public String toString() {
+        String deltaPass = "";
+        for (int i = 0; i < passengers.size(); i++) {
+            deltaPass = deltaPass + passengers.get(i).toString() + "\n---------------------DELTA\n";
+        }
+        return deltaPass;
+    }
 }

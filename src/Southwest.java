@@ -23,4 +23,11 @@ public class Southwest implements Airline {
         }
         return pass;
     }
+    public String toString() {
+        String southPass = "";
+        for (int i = 0; i < passengers.size(); i++) {
+            southPass = southPass + passengers.get(i).toString() + "\n---------------------SOUTHWEST\n";
+        }
+        return southPass;
+    }
 }
