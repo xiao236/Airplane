@@ -22,5 +22,12 @@ public class Alaska implements Airline {
         }
         return pass;
     }
+    public String toString() {
+        String alaskaPass = "";
+        for (int i = 0; i < passengers.size(); i++) {
+            alaskaPass = alaskaPass + passengers.get(i).toString() + "\n---------------------ALASKA\n";
+        }
+        return alaskaPass;
+    }
 
 }
