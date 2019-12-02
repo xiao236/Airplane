@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.io.*;
 import java.net.*;
+import java.util.Arrays;
 
 public class ReservationServer {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -58,27 +59,12 @@ public class ReservationServer {
         System.out.println(0);
         ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
         ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
-
+        out.flush();
         System.out.println(1);
-        out.writeObject(d.currentPassengers);
+        out.writeObject(d.currentPassengers + ":" + d.maxPassengers + ":" + Arrays.toString(d.passengers()) + ":" + a.currentPassengers + ":" + a.maxPassengers + ":" + Arrays.toString(a.passengers()) + ":"
+        + s.currentPassengers + ":" + s.maxPassengers + ":" + Arrays.toString(s.passengers()));
         out.flush();
         System.out.println(2);
-        out.writeObject(d.maxPassengers);
-        out.flush();
-        out.writeObject(d.passengers());
-        out.flush();
-        out.writeObject(a.currentPassengers);
-        out.flush();
-        out.writeObject(a.maxPassengers);
-        out.flush();
-        out.writeObject(a.passengers());
-        out.flush();
-        out.writeObject(s.currentPassengers);
-        out.flush();
-        out.writeObject(s.maxPassengers);
-        out.flush();
-        out.writeObject(s.passengers());
-        out.flush();
 
         String airline = (String)in.readObject();
         System.out.println(airline);

@@ -91,16 +91,10 @@ public class ReservationClient {
         airlineList.setSelectedIndex(0);
         ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
         ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-        final String deltaCurrent = (String) ois.readObject();
-        final String deltaTotal = (String) ois.readObject();
-        final String deltaPass = (String) ois.readObject();
-        final String alaCurrent = (String) ois.readObject();
-        final String alaTotal = (String) ois.readObject();
-        final String alaPass = (String) ois.readObject();
-        final String southCurrent = (String) ois.readObject();
-        final String southTotal = (String) ois.readObject();
-        final String southPass = (String) ois.readObject();
-        System.out.println(deltaCurrent);
+        oos.flush();
+        String accepted = (String)ois.readObject();
+        final String[] info = accepted.split(":");
+        System.out.println(info.toString());
         airlineList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -123,7 +117,7 @@ public class ReservationClient {
                             @Override
                             public void keyPressed(KeyEvent keyEvent) {
                                 if (keyEvent.getKeyChar() == KeyEvent.VK_BACK_SLASH) {
-                                    JOptionPane.showMessageDialog(null, "Delta Airlines." + deltaCurrent + ":" + deltaTotal, deltaPass, JOptionPane.INFORMATION_MESSAGE);
+                                    JOptionPane.showMessageDialog(null, "Delta Airlines." + info[0] + ":" + info[1], info[2], JOptionPane.INFORMATION_MESSAGE);
                                 }
                             }
 
@@ -147,7 +141,7 @@ public class ReservationClient {
                             @Override
                             public void keyPressed(KeyEvent keyEvent) {
                                 if (keyEvent.getKeyChar() == KeyEvent.VK_BACK_SLASH) {
-                                    JOptionPane.showMessageDialog(null, "Southwest Airlines." + southCurrent + ":" + southTotal, southPass, JOptionPane.INFORMATION_MESSAGE);
+                                    JOptionPane.showMessageDialog(null, "Southwest Airlines." + info[6] + ":" + info[7], info[8], JOptionPane.INFORMATION_MESSAGE);
                                 }
                             }
 
@@ -171,7 +165,7 @@ public class ReservationClient {
                             @Override
                             public void keyPressed(KeyEvent keyEvent) {
                                 if (keyEvent.getKeyChar() == KeyEvent.VK_BACK_SLASH) {
-                                    JOptionPane.showMessageDialog(null, "Alaska Airlines." + alaCurrent + ":" + alaTotal, alaPass, JOptionPane.INFORMATION_MESSAGE);
+                                    JOptionPane.showMessageDialog(null, "Alaska Airlines." + info[3] + ":" + info[4], info[5], JOptionPane.INFORMATION_MESSAGE);
                                 }
                             }
 
