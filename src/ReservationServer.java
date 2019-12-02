@@ -74,7 +74,9 @@ public class ReservationServer {
         String airline = (String)in.readObject();
         System.out.println(airline);
         System.out.println("recieved");
-        Passenger p = (Passenger)in.readObject();
+        String passengerInfo = (String)in.readObject();
+        String[] pass = passengerInfo.split(" ");
+        Passenger p = new Passenger(pass[0], pass[1], Integer.parseInt(pass[2]));
         switch(airline) {
             case "Delta":
                 d.addPassenger(p);
