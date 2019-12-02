@@ -2,12 +2,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 public class ReservationClient {
-    public static void main(String args[]) throws IOException {
+    public static void main(String args[]) throws IOException, ClassNotFoundException {
         String nameOfAirline;
         String[] options1 = {
                 "Exit", "Book a Flight"
@@ -46,7 +49,7 @@ public class ReservationClient {
     }
 
 
-    private static void createAndShowGUI(Socket socket) {
+    private static void createAndShowGUI(Socket socket) throws IOException, ClassNotFoundException {
         String[] airlines = {
                 "Delta", "Alaska", "Southwest"
         };
@@ -86,6 +89,16 @@ public class ReservationClient {
         panel2.add(jlsouth);
         panel2.add(jlalaska);
         airlineList.setSelectedIndex(0);
+        ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
+        final int deltaCurrent = (int) ois.readObject();
+        final int deltaTotal = (int) ois.readObject();
+        final String deltaPass = (String) ois.readObject();
+        final int alaCurrent = (int) ois.readObject();
+        final int alaTotal = (int) ois.readObject();
+        final String alaPass = (String) ois.readObject();
+        final int southCurrent = (int) ois.readObject();
+        final int southTotal = (int) ois.readObject();
+        final String southPass = (String) ois.readObject();
         airlineList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -99,18 +112,72 @@ public class ReservationClient {
                         jlsouth.setVisible(false);
                         jlalaska.setVisible(false);
                         jt.setText("Delta");
+                        airlineList.addKeyListener(new KeyListener() {
+                            @Override
+                            public void keyTyped(KeyEvent keyEvent) {
+
+                            }
+
+                            @Override
+                            public void keyPressed(KeyEvent keyEvent) {
+                                if (keyEvent.getKeyChar() == KeyEvent.VK_BACK_SLASH) {
+                                    JOptionPane.showMessageDialog(null, "Delta Airlines." + deltaCurrent + ":" + deltaTotal, deltaPass, JOptionPane.INFORMATION_MESSAGE);
+                                }
+                            }
+
+                            @Override
+                            public void keyReleased(KeyEvent keyEvent) {
+
+                            }
+                        });
                         break;
                     case "Southwest":
                         jlsouth.setVisible(true);
                         jldelta.setVisible(false);
                         jlalaska.setVisible(false);
                         jt.setText("Southwest");
+                        airlineList.addKeyListener(new KeyListener() {
+                            @Override
+                            public void keyTyped(KeyEvent keyEvent) {
+
+                            }
+
+                            @Override
+                            public void keyPressed(KeyEvent keyEvent) {
+                                if (keyEvent.getKeyChar() == KeyEvent.VK_BACK_SLASH) {
+                                    JOptionPane.showMessageDialog(null, "Southwest Airlines." + southCurrent + ":" + southTotal, southPass, JOptionPane.INFORMATION_MESSAGE);
+                                }
+                            }
+
+                            @Override
+                            public void keyReleased(KeyEvent keyEvent) {
+
+                            }
+                        });
                         break;
                     case "Alaska":
                         jlalaska.setVisible(true);
                         jldelta.setVisible(false);
                         jlsouth.setVisible(false);
                         jt.setText("Alaska");
+                        airlineList.addKeyListener(new KeyListener() {
+                            @Override
+                            public void keyTyped(KeyEvent keyEvent) {
+
+                            }
+
+                            @Override
+                            public void keyPressed(KeyEvent keyEvent) {
+                                if (keyEvent.getKeyChar() == KeyEvent.VK_BACK_SLASH) {
+                                    JOptionPane.showMessageDialog(null, "Alaska Airlines." + alaCurrent + ":" + alaTotal, alaPass, JOptionPane.INFORMATION_MESSAGE);
+                                }
+                            }
+
+                            @Override
+                            public void keyReleased(KeyEvent keyEvent) {
+
+                            }
+                        });
                         break;
                 }
             }
@@ -167,7 +234,11 @@ public class ReservationClient {
         button2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 jf.setVisible(false);
-                createAndShowGUI(socket);
+                try {
+                    createAndShowGUI(socket);
+                } catch (IOException | ClassNotFoundException ex) {
+                    ex.printStackTrace();
+                }
             }
         });
         button3.addActionListener(new ActionListener() {

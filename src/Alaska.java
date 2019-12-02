@@ -33,5 +33,19 @@ public class Alaska implements Airline {
         }
         return alaskaPass;
     }
+    public int getCurrentPassengers() {
+        return currentPassengers;
+    }
+    public int getMaxPassengers() {
+        return maxPassengers;
+    }
+    public String getPassengers() {
+        String pass = "<html>";
+        for (int i = 0; i < passengers.size(); i++) {
+            pass = pass + passengers.get(i).toString() + "<br/>";
+        }
+        pass = pass + "</html";
+        return pass;
+    }
 
 }
