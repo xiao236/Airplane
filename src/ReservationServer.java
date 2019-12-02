@@ -59,25 +59,7 @@ public class ReservationServer {
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
         writer.flush();
 
-        while(true){
-            String yes = reader.readLine();
-
-            switch (yes){
-                case "Alaska":
-                    Alaska al =new Alaska();
-                    listofpassenger= al.readClient();
-                    break;
-                case "Delta":
-                    break;
-                case "Southwest":
-                    break;
-                default:
-                    break;
-            }
-            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
-            out.writeObject(listofpassenger);
-
-        }
+        
     }
 
 }
