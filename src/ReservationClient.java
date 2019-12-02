@@ -238,7 +238,7 @@ public class ReservationClient {
                 if(choice==0){
                 }else{
                     jf.setVisible(false);
-                    try {
+                    try { 
                         ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
                         Passenger p = new Passenger(jt1.getText(), jt2.getText(), Integer.parseInt(jt3.getText()));
                         oos.writeObject(p);
