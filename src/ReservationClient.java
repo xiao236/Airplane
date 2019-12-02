@@ -121,7 +121,7 @@ public class ReservationClient {
         panel1.add(airlineList);
         JButton button1 = new JButton("Exit");
         JButton button2 = new JButton("Choose this flight");
-
+        
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
@@ -181,7 +181,7 @@ public class ReservationClient {
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-                createAndShowGUIII(socket);
+                createAndShowGUIII(nameofairline,socket);
             }
         });
         panel3.add(button1);
@@ -194,7 +194,7 @@ public class ReservationClient {
         jf.setVisible(true);
     }
 
-    private static void createAndShowGUIII(Socket socket) {
+    private static void createAndShowGUIII(String nameofairline,Socket socket) {
         String[] options1 = {
                 "No", "Yes"
         };
@@ -246,7 +246,7 @@ public class ReservationClient {
                         ex.printStackTrace();
                     }
 
-                    createAndShowGUIIII(socket);
+                    createAndShowGUIIII(nameofairline,socket);
                 }
 
 
@@ -263,7 +263,24 @@ public class ReservationClient {
         jf.setVisible(true);
     }
 
-    private static void createAndShowGUIIII(Socket socket) {
+    private static void createAndShowGUIIII(String nameofairline,Socket socket) {
+        JFrame jf = new JFrame("Purdue University Flight Reservation System");
+        jf.setSize(new Dimension(900, 700));
+        JPanel panel1 = new JPanel();
+        panel1.setPreferredSize(new Dimension(900, 100));
+        JPanel panel2 = new JPanel();
+        panel2.setSize(900, 500);
+        JPanel panel3 = new JPanel();
+        JLabel choose = new JLabel("<html>Flight data displaying for "+nameofairline+"" +
+                " Airlines<br/>Enjoy your flight!<br/>Flight is now boarding at Gate </html>");
+        panel1.add(choose);
 
+        //JScrollPane scrollPane = new JScrollPane(textArea);
+
+        jf.add(panel1, BorderLayout.NORTH);
+        jf.add(panel2, BorderLayout.CENTER);
+        jf.add(panel3, BorderLayout.SOUTH);
+        jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        jf.setVisible(true);
     }
 }
