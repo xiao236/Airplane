@@ -59,26 +59,20 @@ public class ReservationServer {
         ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
         out.flush();
 
-        String airline = (String)in.readObject();
-        switch(airline) {
-            case "Delta":
-                out.writeObject(d.currentPassengers);
-                out.writeObject(d.maxPassengers);
-                out.writeObject(d.passengers());
-                break;
-            case "Alaska":
-                out.writeObject(a.currentPassengers);
-                out.writeObject(a.maxPassengers);
-                out.writeObject(a.passengers());
-                break;
-            case "Southwest":
-                out.writeObject(s.currentPassengers);
-                out.writeObject(s.maxPassengers);
-                out.writeObject(s.passengers());
-                break;
-        }
+        out.writeObject(d.currentPassengers);
+        out.writeObject(d.maxPassengers);
+        out.writeObject(d.passengers());
 
-        airline = (String)in.readObject();
+        out.writeObject(a.currentPassengers);
+        out.writeObject(a.maxPassengers);
+        out.writeObject(a.passengers());
+
+        out.writeObject(s.currentPassengers);
+        out.writeObject(s.maxPassengers);
+        out.writeObject(s.passengers());
+
+        String airline = (String)in.readObject();
+        System.out.println("recieved");
         Passenger p = (Passenger)in.readObject();
         switch(airline) {
             case "Delta":
