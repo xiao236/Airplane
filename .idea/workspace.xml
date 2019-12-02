@@ -3,7 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="146ddf4f-9db4-42bf-b7c1-801eb1be5038" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/reservations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Airplane/Airline.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Airplane/Airline.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Airplane/Alaska.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Airplane/Alaska.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Airplane/BoardingPass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Airplane/BoardingPass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Airplane/Delta.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Airplane/Delta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Airplane/Gate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Airplane/Gate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Airplane/Passenger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Airplane/Passenger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Airplane/ReservationClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Airplane/ReservationClient$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Airplane/ReservationClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Airplane/ReservationClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Airplane/ReservationServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Airplane/ReservationServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Airplane/Southwest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Airplane/Southwest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ReservationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReservationServer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

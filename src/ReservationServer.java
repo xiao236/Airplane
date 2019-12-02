@@ -10,16 +10,13 @@ public class ReservationServer {
         Southwest s = new Southwest();
 
         BufferedReader br = new BufferedReader(new FileReader("reservations.txt"));
-        int[] howManyPassengers = new int[2];
         br.readLine();
         String next = br.readLine();
         String[] hold = next.split("/");
-        for (int i = 0; i < 2; i ++) {
-            howManyPassengers[i] = Integer.parseInt(hold[i]);
-        }
+        a.currentPassengers = Integer.parseInt(hold[0]);
+        a.maxPassengers = Integer.parseInt(hold[1]);
         br.readLine();
-        br.readLine();
-        for (int i = 0; i < howManyPassengers[0]; i++) {
+        for (int i = 0; i < a.currentPassengers; i++) {
             next = br.readLine();
             hold = next.split(" ");
             Passenger p = new Passenger(hold[0], hold[1].substring(0, hold[1].length()-1), Integer.parseInt(hold[2]));
@@ -30,8 +27,29 @@ public class ReservationServer {
         br.readLine();
         next = br.readLine();
         hold = next.split("/");
-        for (int i = 0; i < 2; i ++) {
-            howManyPassengers[i] = Integer.parseInt(hold[i]);
+        d.currentPassengers = Integer.parseInt(hold[0]);
+        d.maxPassengers = Integer.parseInt(hold[1]);
+        br.readLine();
+        for (int i = 0; i < d.currentPassengers; i++) {
+            next = br.readLine();
+            hold = next.split(" ");
+            Passenger p = new Passenger(hold[0], hold[1].substring(0, hold[1].length()-1), Integer.parseInt(hold[2]));
+            d.addPassenger(p);
+            br.readLine();
+        }
+        br.readLine();
+        br.readLine();
+        next = br.readLine();
+        hold = next.split("/");
+        s.currentPassengers = Integer.parseInt(hold[0]);
+        s.maxPassengers = Integer.parseInt(hold[1]);
+        br.readLine();
+        for (int i = 0; i < s.currentPassengers; i++) {
+            next = br.readLine();
+            hold = next.split(" ");
+            Passenger p = new Passenger(hold[0], hold[1].substring(0, hold[1].length()-1), Integer.parseInt(hold[2]));
+            s.addPassenger(p);
+            br.readLine();
         }
 
 
