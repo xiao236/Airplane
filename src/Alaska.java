@@ -9,6 +9,7 @@ public class Alaska implements Airline {
     public Alaska() {
         currentPassengers = 0;
         maxPassengers = 100;
+        passengers = new ArrayList<>();
     }
     public void addPassenger(Passenger p) {
         currentPassengers++;

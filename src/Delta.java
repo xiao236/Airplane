@@ -11,6 +11,7 @@ public class Delta implements Airline {
 
     public Delta() {
         currentPassengers = 0;
+        passengers = new ArrayList<>();
         maxPassengers = 100;
     }
     public void addPassenger(Passenger p) {

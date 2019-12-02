@@ -11,6 +11,7 @@ public class Southwest implements Airline {
     public Southwest() {
         currentPassengers = 0;
         maxPassengers = 100;
+        passengers = new ArrayList<>();
     }
     public void addPassenger(Passenger p) {
         currentPassengers++;
