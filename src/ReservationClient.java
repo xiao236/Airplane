@@ -90,15 +90,17 @@ public class ReservationClient {
         panel2.add(jlalaska);
         airlineList.setSelectedIndex(0);
         ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
-        final int deltaCurrent = (int) ois.readObject();
-        final int deltaTotal = (int) ois.readObject();
+        ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+        final String deltaCurrent = (String) ois.readObject();
+        final String deltaTotal = (String) ois.readObject();
         final String deltaPass = (String) ois.readObject();
-        final int alaCurrent = (int) ois.readObject();
-        final int alaTotal = (int) ois.readObject();
+        final String alaCurrent = (String) ois.readObject();
+        final String alaTotal = (String) ois.readObject();
         final String alaPass = (String) ois.readObject();
-        final int southCurrent = (int) ois.readObject();
-        final int southTotal = (int) ois.readObject();
+        final String southCurrent = (String) ois.readObject();
+        final String southTotal = (String) ois.readObject();
         final String southPass = (String) ois.readObject();
+        System.out.println(deltaCurrent);
         airlineList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
