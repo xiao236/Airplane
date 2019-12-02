@@ -15,30 +15,12 @@ public class Alaska implements Airline {
         passengers.add(p);
     }
 
-    public String[] readClient() throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("reservation.txt"));
-        ArrayList<String> listOfpassenger= new ArrayList<>();
-        int a=0;
-        String b;
-
-        while ((b = br.readLine()) != null){
-            if(b.equals("Alaska passenger list")){
-                break;
-            }
-            if(a==1) {
-                listOfpassenger.add(b);
-            }
-            if(b.equals("Alaska")){
-                a++;
-            }
+    public String[] passengers() {
+        String[] pass = new String[currentPassengers];
+        for (int i = 0; i < currentPassengers; i++) {
+            pass[0] = passengers.get(i).toString();
         }
-        int sizeofarray = listOfpassenger.size();
-        String[] arrayofpassenger = new String[sizeofarray];
-        a=0;
-        for(String k:listOfpassenger){
-            arrayofpassenger[a]=k;
-            a++;
-        }
-        return arrayofpassenger;
+        return pass;
     }
+
 }
