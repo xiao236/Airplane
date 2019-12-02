@@ -38,6 +38,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -54,6 +57,13 @@
   <component name="RunManager" selected="Application.ReservationClient">
     <configuration name="ReservationClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ReservationClient" />
+      <module name="Airplane" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReservationServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ReservationServer" />
       <module name="Airplane" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -80,6 +90,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ReservationClient" />
+        <item itemvalue="Application.ReservationServer" />
       </list>
     </recent_temporary>
   </component>
