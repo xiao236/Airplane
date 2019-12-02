@@ -102,7 +102,7 @@ public class ReservationClient {
                 jf.add(panel1, BorderLayout.NORTH);
                 jf.add(panel2, BorderLayout.CENTER);
                 jf.add(panel3, BorderLayout.SOUTH);
-
+                
                 jf.setVisible(true);
                 //airline = (String) JOptionPane.showInputDialog(null, "Choose a flight from the drop down menu.", "Purdue University Flight Reservation System", JOptionPane.QUESTION_MESSAGE, null, airlines, airlines[0]);
             }else{
