@@ -193,7 +193,11 @@ public class ReservationClient {
         jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         jf.setVisible(true);
     }
+
     private static void createAndShowGUIII(Socket socket) {
+        String[] options1 = {
+                "No", "Yes"
+        };
         JFrame jf = new JFrame("Purdue University Flight Reservation System");
         jf.setSize(new Dimension(900, 700));
         JPanel panel1 = new JPanel();
@@ -203,10 +207,63 @@ public class ReservationClient {
         JPanel panel3 = new JPanel();
         JLabel choose = new JLabel("Please input your information below.");
         panel1.add(choose);
+
+        JTextField jt1= new JTextField(null,3);
+        JTextField jt2= new JTextField(null,3);
+        JTextField jt3= new JTextField(null,3);
+        JLabel jl1 = new JLabel("What is your first name?");
+        JLabel jl2 = new JLabel("What is your last name?");
+        JLabel jl3 = new JLabel("What is your age?");
+        panel2.add(jl1);
+        panel2.add(jt1);
+        panel2.add(jl2);
+        panel2.add(jt2);
+        panel2.add(jl3);
+        panel2.add(jt3);
+        JButton button1 = new JButton("Exit");
+        JButton button2 = new JButton("Next");
+
+        button1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        button2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                int choice = JOptionPane.showOptionDialog(null,
+                        "Are all the details you entered correct?\n"+
+                                "The passenger's name is "+ jt1.getText()+" "+jt2.getText()+" and their age is "+ jt3.getText()+
+                                "\nIf all the information shown is correct, select the Yes button below, otherwise, select the No button"
+                        , "Comfirm Info", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE,null, options1, options1[0]);
+                if(choice==0){
+                }else{
+                    jf.setVisible(false);
+                    try {
+                        ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+                        Passenger p = new Passenger(jt1.getText(), jt2.getText(), Integer.parseInt(jt3.getText()));
+                        oos.writeObject(p);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+
+                    createAndShowGUIIII(socket);
+                }
+
+
+
+            }
+        });
+
+        panel3.add(button1);
+        panel3.add(button2);
         jf.add(panel1, BorderLayout.NORTH);
         jf.add(panel2, BorderLayout.CENTER);
         jf.add(panel3, BorderLayout.SOUTH);
         jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         jf.setVisible(true);
+    }
+
+    private static void createAndShowGUIIII(Socket socket) {
+
     }
 }
