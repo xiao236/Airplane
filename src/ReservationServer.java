@@ -72,6 +72,7 @@ public class ReservationServer {
         out.writeObject(s.passengers());
 
         String airline = (String)in.readObject();
+        System.out.println(airline);
         System.out.println("recieved");
         String passengerInfo = (String)in.readObject();
         String[] pass = passengerInfo.split(" ");
