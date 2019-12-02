@@ -4,9 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.Socket;
 
 public class ReservationClient {
@@ -89,12 +87,18 @@ public class ReservationClient {
         panel2.add(jlsouth);
         panel2.add(jlalaska);
         airlineList.setSelectedIndex(0);
-        ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
-        ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-        oos.flush();
-        String accepted = (String)ois.readObject();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        // open BufferedWriter to send messages to  the server.
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+        writer.flush();
+
+        System.out.println(1);
+        String accepted = (String)reader.readLine();
+        System.out.println(accepted);
         final String[] info = accepted.split(":");
-        System.out.println(info.toString());
+        for (int i =0; i < info.length; i++) {
+            System.out.println(info[i]);
+        }
         airlineList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {

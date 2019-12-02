@@ -57,17 +57,23 @@ public class ReservationServer {
 
         ServerSocket serverSocket = new ServerSocket(4242);
         Socket socket = serverSocket.accept();
-        ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
-        ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
-        out.flush();
-        out.writeObject(d.currentPassengers + ":" + d.maxPassengers + ":" + Arrays.toString(d.passengers()) + ":" + a.currentPassengers + ":" + a.maxPassengers + ":" + Arrays.toString(a.passengers()) + ":"
-        + s.currentPassengers + ":" + s.maxPassengers + ":" + Arrays.toString(s.passengers()));
+        System.out.println(0);
+        BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        System.out.println(1);
+        // open BufferedWriter to send messages to  the server.
+        BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
         out.flush();
 
-        String airline = (String)in.readObject();
+
+        out.write(d.currentPassengers + ":" + d.maxPassengers + ":" + Arrays.toString(d.passengers()) + ":" + a.currentPassengers + ":" + a.maxPassengers + ":" + Arrays.toString(a.passengers()) + ":"
+        + s.currentPassengers + ":" + s.maxPassengers + ":" + Arrays.toString(s.passengers()));
+        out.newLine();
+        out.flush();
+        
+        String airline = in.readLine();
         System.out.println(airline);
         System.out.println("recieved");
-        String passengerInfo = (String)in.readObject();
+        String passengerInfo = in.readLine();
         String[] pass = passengerInfo.split(" ");
         Passenger p = new Passenger(pass[0], pass[1], Integer.parseInt(pass[2]));
         switch(airline) {
