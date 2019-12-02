@@ -20,7 +20,7 @@ public class ReservationServer {
             next = br.readLine();
             hold = next.split(" ");
             Passenger p = new Passenger(hold[0], hold[1].substring(0, hold[1].length()-1), Integer.parseInt(hold[2]));
-            a.addPassenger(p);
+            a.preAdd(p);
             br.readLine();
         }
         br.readLine();
@@ -34,7 +34,7 @@ public class ReservationServer {
             next = br.readLine();
             hold = next.split(" ");
             Passenger p = new Passenger(hold[0], hold[1].substring(0, hold[1].length()-1), Integer.parseInt(hold[2]));
-            d.addPassenger(p);
+            d.preAdd(p);
             br.readLine();
         }
         br.readLine();
@@ -48,7 +48,7 @@ public class ReservationServer {
             next = br.readLine();
             hold = next.split(" ");
             Passenger p = new Passenger(hold[0], hold[1].substring(0, hold[1].length()-1), Integer.parseInt(hold[2]));
-            s.addPassenger(p);
+            s.preAdd(p);
             br.readLine();
         }
 

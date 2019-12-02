@@ -15,6 +15,9 @@ public class Alaska implements Airline {
         currentPassengers++;
         passengers.add(p);
     }
+    public void preAdd(Passenger p) {
+        passengers.add(p);
+    }
 
     public String[] passengers() {
         String[] pass = new String[currentPassengers];

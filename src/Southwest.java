@@ -17,6 +17,9 @@ public class Southwest implements Airline {
         currentPassengers++;
         passengers.add(p);
     }
+    public void preAdd(Passenger p) {
+        passengers.add(p);
+    }
     public String[] passengers() {
         String[] pass = new String[currentPassengers];
         for (int i = 0; i < currentPassengers; i++) {
