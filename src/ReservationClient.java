@@ -42,7 +42,7 @@ public class ReservationClient {
             }
             break;
         }
-        //JOptionPane.showMessageDialog(null,"Thank you for using the Purdue University Airline Management System!");
+
     }
 
 
@@ -124,7 +124,8 @@ public class ReservationClient {
 
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                JOptionPane.showMessageDialog(null,"Thank you for using the Purdue University Airline Management System!");
+                System.exit(0);
             }
         });
         button2.addActionListener(new ActionListener() {
@@ -161,7 +162,8 @@ public class ReservationClient {
         JButton button3 = new JButton("Yes, I want this flight");
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                JOptionPane.showMessageDialog(null,"Thank you for using the Purdue University Airline Management System!");
+                System.exit(0);
             }
         });
         button2.addActionListener(new ActionListener() {
@@ -240,7 +242,6 @@ public class ReservationClient {
                     jf.setVisible(false);
                     try {
                         ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-                        Passenger p = new Passenger(jt1.getText(), jt2.getText(), Integer.parseInt(jt3.getText()));
                         oos.writeObject(jt1.getText()+" "+ jt2.getText()+" "+ jt3.getText());
                     } catch (IOException ex) {
                         ex.printStackTrace();
@@ -276,7 +277,20 @@ public class ReservationClient {
         panel1.add(choose);
 
         //JScrollPane scrollPane = new JScrollPane(textArea);
+        JButton button1 = new JButton("Exit");
+        JButton button2 = new JButton("Refresh Flight Status");
 
+        button1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null,"Thank you for using the Purdue University Airline Management System!");
+                System.exit(0);
+            }
+        });
+        button1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
         jf.add(panel1, BorderLayout.NORTH);
         jf.add(panel2, BorderLayout.CENTER);
         jf.add(panel3, BorderLayout.SOUTH);
