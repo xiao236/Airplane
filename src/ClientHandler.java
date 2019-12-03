@@ -101,19 +101,32 @@ public class ClientHandler implements Runnable {
                     s.addPassenger(p);
                     break;
             }
-            PrintWriter pw = new PrintWriter(new FileOutputStream("reservations.txt"));
-            pw.println("ALASKA");
-            pw.println(a.currentPassengers + "/" + a.maxPassengers);
-            pw.println("Alaska passenger list");
-            pw.println(a.toString());
-            pw.println("DELTA");
-            pw.println(d.currentPassengers + "/" + d.maxPassengers);
-            pw.println("Delta passenger list");
-            pw.println(d.toString());
-            pw.println("SOUTHWEST");
-            pw.println(s.currentPassengers + "/" + s.maxPassengers);
-            pw.println("Southwest passenger list");
-            pw.println(s.toString());
+            BufferedWriter bw = new BufferedWriter(new FileWriter("reservations.txt"));
+            bw.flush();
+            bw.write("ALASKA\n");
+            bw.flush();
+            bw.write(a.currentPassengers + "/" + a.maxPassengers + "\n");
+            bw.flush();
+            bw.write("Alaska passenger list\n");
+            bw.flush();
+            bw.write(a.toString() + "\n");
+            bw.flush();
+            bw.write("DELTA\n");
+            bw.flush();
+            bw.write(d.currentPassengers + "/" + d.maxPassengers + "\n");
+            bw.flush();
+            bw.write("Delta passenger list\n");
+            bw.flush();
+            bw.write(d.toString() + "\n");
+            bw.flush();
+            bw.write("SOUTHWEST\n");
+            bw.flush();
+            bw.write(s.currentPassengers + "/" + s.maxPassengers + "\n");
+            bw.flush();
+            bw.write("Southwest passenger list\n");
+            bw.flush();
+            bw.write(s.toString() + "\n");
+            bw.flush();
         } catch (Exception e) {
             e.printStackTrace();
         }
