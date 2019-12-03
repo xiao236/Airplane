@@ -347,13 +347,28 @@ public class ReservationClient {
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         String gate = reader.readLine();
         String pass = reader.readLine();
+        String a = reader.readLine();
+        System.out.println(a);
         JLabel choose = new JLabel("<html>Flight data displaying for "+nameofairline+"" +
                 " Airlines<br/>Enjoy your flight!<br/>Flight is now boarding at Gate "+gate+"</html>");
         choose.setFont(choose.getFont().deriveFont(32.0f));
         panel1.add(choose);
         JButton button1 = new JButton("Exit");
         JButton button2 = new JButton("Refresh Flight Status");
-
+        JLabel textArea = new JLabel(a);
+        textArea.setPreferredSize(new Dimension(500,100));
+        JScrollPane scrollPane = new JScrollPane(textArea);
+        JPanel panel4 = new JPanel();
+        panel4.add(scrollPane);
+        scrollPane.setSize(new Dimension(500,100));
+        JPanel inputPanel = new JPanel();
+        JLabel boarding = new JLabel(pass);
+        inputPanel.setLayout(new FlowLayout());
+        inputPanel.add(boarding);
+        inputPanel.setMaximumSize(new Dimension(Integer.MAX_VALUE, 75));
+        inputPanel.setLayout(new BoxLayout(inputPanel, BoxLayout.X_AXIS));
+        panel2.add(panel4);
+        panel2.add(inputPanel);
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try{
@@ -380,25 +395,13 @@ public class ReservationClient {
                     writer.flush();
 
                     String a =reader.readLine();
-
+                    textArea.setText(a);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         });
-        JLabel textArea = new JLabel("<html>HELLO<br/>hi<br/>hi</html>");
-        JScrollPane scrollPane = new JScrollPane(textArea);
-        JPanel panel4 = new JPanel();
-        panel4.add(scrollPane);
-        JPanel inputPanel = new JPanel();
-        JLabel boarding = new JLabel(pass);
-        inputPanel.setLayout(new FlowLayout());
-        inputPanel.add(boarding);
-        inputPanel.setMaximumSize(new Dimension(Integer.MAX_VALUE, 75));
-        inputPanel.setLayout(new BoxLayout(inputPanel, BoxLayout.X_AXIS));
-        panel2.add(panel4);
-        panel2.setLayout(new BorderLayout());
-        panel2.add(inputPanel);
+
 
         panel3.add(button1);
         panel3.add(button2);
