@@ -1,3 +1,4 @@
+import javax.sound.midi.SysexMessage;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -43,7 +44,6 @@ public class ReservationClient {
             }
             break;
         }
-        //JOptionPane.showMessageDialog(null,"Thank you for using the Purdue University Airline Management System!");
     }
 
 
@@ -178,7 +178,8 @@ public class ReservationClient {
         
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                JOptionPane.showMessageDialog(null,"Thank you for using the Purdue University Airline Management System!");
+                System.exit(0);
             }
         });
         button2.addActionListener(new ActionListener() {
@@ -215,7 +216,8 @@ public class ReservationClient {
         JButton button3 = new JButton("Yes, I want this flight");
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                JOptionPane.showMessageDialog(null,"Thank you for using the Purdue University Airline Management System!");
+                System.exit(0);
             }
         });
         button2.addActionListener(new ActionListener() {
@@ -283,7 +285,8 @@ public class ReservationClient {
 
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                JOptionPane.showMessageDialog(null,"Thank you for using the Purdue University Airline Management System!");
+                System.exit(0);
             }
         });
         button2.addActionListener(new ActionListener() {
