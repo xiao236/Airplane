@@ -79,7 +79,7 @@ public class ReservationClient {
         JLabel jlsouth = new JLabel(SouthwestAd);
         JLabel jlalaska = new JLabel(AlaskaAd);
         JTextField jt = new JTextField("Delta");
-
+        JTextField jk = new JTextField("0");
         jldelta.setVisible(false);
         jlsouth.setVisible(false);
         jlalaska.setVisible(false);
@@ -92,96 +92,83 @@ public class ReservationClient {
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
         writer.flush();
 
-        System.out.println(1);
-        String accepted = (String)reader.readLine();
-        System.out.println(accepted);
+        String accepted = reader.readLine();
         final String[] info = accepted.split(":");
         for (int i =0; i < info.length; i++) {
             System.out.println(info[i]);
         }
+
         airlineList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 JComboBox cb = (JComboBox) actionEvent.getSource();
                 String airline = (String) cb.getSelectedItem();
-                String a;
-                assert airline != null;
                 switch (airline) {
                     case "Delta":
                         jldelta.setVisible(true);
                         jlsouth.setVisible(false);
                         jlalaska.setVisible(false);
                         jt.setText("Delta");
-                        airlineList.addKeyListener(new KeyListener() {
-                            @Override
-                            public void keyTyped(KeyEvent keyEvent) {
+                        jk.setText("0");
 
-                            }
-
-                            @Override
-                            public void keyPressed(KeyEvent keyEvent) {
-                                if (keyEvent.getKeyChar() == KeyEvent.VK_BACK_SLASH) {
-                                    JOptionPane.showMessageDialog(null, "Delta Airlines." + info[0] + ":" + info[1], info[2], JOptionPane.INFORMATION_MESSAGE);
-                                }
-                            }
-
-                            @Override
-                            public void keyReleased(KeyEvent keyEvent) {
-
-                            }
-                        });
                         break;
                     case "Southwest":
+
                         jlsouth.setVisible(true);
                         jldelta.setVisible(false);
                         jlalaska.setVisible(false);
                         jt.setText("Southwest");
-                        airlineList.addKeyListener(new KeyListener() {
-                            @Override
-                            public void keyTyped(KeyEvent keyEvent) {
-
-                            }
-
-                            @Override
-                            public void keyPressed(KeyEvent keyEvent) {
-                                if (keyEvent.getKeyChar() == KeyEvent.VK_BACK_SLASH) {
-                                    JOptionPane.showMessageDialog(null, "Southwest Airlines." + info[6] + ":" + info[7], info[8], JOptionPane.INFORMATION_MESSAGE);
-                                }
-                            }
-
-                            @Override
-                            public void keyReleased(KeyEvent keyEvent) {
-
-                            }
-                        });
+                        jk.setText("6");
                         break;
                     case "Alaska":
+                        jk.setText("3");
                         jlalaska.setVisible(true);
                         jldelta.setVisible(false);
                         jlsouth.setVisible(false);
                         jt.setText("Alaska");
-                        airlineList.addKeyListener(new KeyListener() {
-                            @Override
-                            public void keyTyped(KeyEvent keyEvent) {
-
-                            }
-
-                            @Override
-                            public void keyPressed(KeyEvent keyEvent) {
-                                if (keyEvent.getKeyChar() == KeyEvent.VK_BACK_SLASH) {
-                                    JOptionPane.showMessageDialog(null, "Alaska Airlines." + info[3] + ":" + info[4], info[5], JOptionPane.INFORMATION_MESSAGE);
-                                }
-                            }
-
-                            @Override
-                            public void keyReleased(KeyEvent keyEvent) {
-
-                            }
-                        });
                         break;
+                    default: ;
                 }
+
             }
         });
+
+        airlineList.addKeyListener(new KeyListener() {
+            @Override
+
+
+            public void keyTyped(KeyEvent keyEvent) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent keyEvent) {
+                if (keyEvent.getKeyChar() == KeyEvent.VK_BACK_SLASH) {
+                    String current;
+                    String total;
+                    String[] store;
+                    String people = "";
+                    int count = Integer.parseInt(jk.getText());
+                    current = info[count];
+                    total = info[count+1];
+                    store = info[count+2].split(";");
+                    int index = 0;
+                    for (int i = 0; i < store.length; i++) {
+                        people = people + store[i] + "\n";
+                    }
+                    String fin = people;
+                    JOptionPane.showMessageDialog(null, fin,jt.getText() + " Airlines." + current + ":" + total, JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent keyEvent) {
+
+            }
+        });
+
+
+
         JLabel choose = new JLabel("Choose a flight from the drop down menu\n");
         choose.setFont(choose.getFont().deriveFont(32.0f));
         panel1.add(choose);

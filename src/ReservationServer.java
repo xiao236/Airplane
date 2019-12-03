@@ -65,14 +65,12 @@ public class ReservationServer {
         out.flush();
 
 
-        out.write(d.currentPassengers + ":" + d.maxPassengers + ":" + Arrays.toString(d.passengers()) + ":" + a.currentPassengers + ":" + a.maxPassengers + ":" + Arrays.toString(a.passengers()) + ":"
-        + s.currentPassengers + ":" + s.maxPassengers + ":" + Arrays.toString(s.passengers()));
+        out.write(d.currentPassengers + ":" + d.maxPassengers + ":" + d.retrieve() + ":" + a.currentPassengers + ":" + a.maxPassengers + ":" + a.retrieve() + ":"
+        + s.currentPassengers + ":" + s.maxPassengers + ":" + s.retrieve());
         out.newLine();
         out.flush();
         
         String airline = in.readLine();
-        System.out.println(airline);
-        System.out.println("recieved");
         String passengerInfo = in.readLine();
         String[] pass = passengerInfo.split(" ");
         Passenger p = new Passenger(pass[0], pass[1], Integer.parseInt(pass[2]));

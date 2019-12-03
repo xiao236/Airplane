@@ -48,4 +48,11 @@ public class Southwest implements Airline {
         pass = pass + "</html";
         return pass;
     }
+    public String retrieve() {
+        String ans = "";
+        for (int i = 0; i < passengers.size(); i++) {
+            ans = ans + passengers.get(i).toString() + ";";
+        }
+        return ans;
+    }
 }

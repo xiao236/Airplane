@@ -24,7 +24,7 @@ public class Delta implements Airline {
     public String[] passengers() {
         String[] pass = new String[currentPassengers];
         for (int i = 0; i < currentPassengers; i++) {
-            pass[0] = passengers.get(i).toString();
+            pass[i] = passengers.get(i).toString();
         }
         return pass;
     }
@@ -48,5 +48,12 @@ public class Delta implements Airline {
         }
         pass = pass + "</html";
         return pass;
+    }
+    public String retrieve() {
+        String ans = "";
+        for (int i = 0; i < passengers.size(); i++) {
+            ans = ans + passengers.get(i).toString() + ";";
+        }
+        return ans;
     }
 }
