@@ -349,6 +349,15 @@ public class ReservationClient {
 
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                try{
+                    BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+                    writer.write(0);
+                    writer.newLine();
+                    writer.flush();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+
                 JOptionPane.showMessageDialog(null,"Thank you for using the Purdue University Airline Management System!");
                 System.exit(0);
             }
@@ -356,11 +365,19 @@ public class ReservationClient {
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
+                try {
+                    BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+                    writer.write(1);
+                    writer.newLine();
+                    writer.flush();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
-        //JScrollPane scrollPane = new JScrollPane(textArea);
-
+        JScrollPane scrollPane = new JScrollPane();
+        panel3.add(button1);
+        panel3.add(button2);
         jf.add(panel1, BorderLayout.NORTH);
         jf.add(panel2, BorderLayout.CENTER);
         jf.add(panel3, BorderLayout.SOUTH);
