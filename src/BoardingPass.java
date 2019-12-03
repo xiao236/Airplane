@@ -7,6 +7,13 @@ public class BoardingPass implements Serializable {
     private int age;
     private Gate gate;
 
+    public BoardingPass() {
+        airline = "";
+        firstName = "";
+        lastName = "";
+        age = 0;
+        gate = new Gate("A");
+    }
     public BoardingPass(String airline, String firstName, String lastName, int age, Gate gate) {
         this.airline = airline;
         this.firstName = firstName;

@@ -107,7 +107,11 @@ public class ClientHandler implements Runnable {
                     p.setBoardingPass(bp);
                     s.addPassenger(p);
                     break;
+                default: bp = new BoardingPass();
             }
+            out.write(bp.toString());
+            out.newLine();
+            out.flush();
             BufferedWriter bw = new BufferedWriter(new FileWriter("reservations.txt"));
             bw.flush();
             bw.write("ALASKA\n");
