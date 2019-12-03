@@ -37,7 +37,7 @@ public class ReservationClient {
                 break;
             }
             if (choice != 0) {
-                createAndShowGUI(socket);
+                createAndShowGUI(socket,0,"");
                 //airline = (String) JOptionPane.showInputDialog(null, "Choose a flight from the drop down menu.", "Purdue University Flight Reservation System", JOptionPane.QUESTION_MESSAGE, null, airlines, airlines[0]);
             } else {
                 break;
@@ -47,7 +47,7 @@ public class ReservationClient {
     }
 
 
-    private static void createAndShowGUI(Socket socket) throws IOException, ClassNotFoundException {
+    private static void createAndShowGUI(Socket socket, int k,String o) throws IOException, ClassNotFoundException {
         String[] airlines = {
                 "Delta", "Alaska", "Southwest"
         };
@@ -67,6 +67,7 @@ public class ReservationClient {
                 "We also have comfortable seats and free WiFi.<br/>" +
                 "We hope you choose Alaska Airlines for your next itinerary.</html>";
         JFrame jf = new JFrame("Purdue University Flight Reservation System");
+
         jf.setPreferredSize(new Dimension(900, 700));
         jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         JComboBox<String> airlineList = new JComboBox<>(airlines);
@@ -91,12 +92,16 @@ public class ReservationClient {
         // open BufferedWriter to send messages to  the server.
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
         writer.flush();
-
-        String accepted = reader.readLine();
-        final String[] info = accepted.split(":");
-        for (int i =0; i < info.length; i++) {
-            System.out.println(info[i]);
+        String accepted="";
+        if(k==0){
+            accepted = reader.readLine();
+        }else{
+            accepted=o;
         }
+        JTextField jn = new JTextField(accepted);
+
+        final String[] info = accepted.split(":");
+
 
         airlineList.addActionListener(new ActionListener() {
             @Override
@@ -185,7 +190,7 @@ public class ReservationClient {
         button2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 jf.setVisible(false);
-                createAndShowGUII(jt.getText(),socket);
+                createAndShowGUII(jt.getText(),socket,jn.getText());
             }
         });
 
@@ -195,12 +200,11 @@ public class ReservationClient {
         jf.add(panel1, BorderLayout.NORTH);
         jf.add(panel2, BorderLayout.CENTER);
         jf.add(panel3, BorderLayout.SOUTH);
-
         jf.pack();
         jf.setVisible(true);
     }
 
-    private static void createAndShowGUII(String nameofairline,Socket socket) {
+    private static void createAndShowGUII(String nameofairline,Socket socket,String p) {
         JFrame jf = new JFrame("Purdue University Flight Reservation System");
         jf.setSize(new Dimension(900, 700));
         JPanel panel1 = new JPanel();
@@ -224,7 +228,9 @@ public class ReservationClient {
             public void actionPerformed(ActionEvent e) {
                 jf.setVisible(false);
                 try {
-                    createAndShowGUI(socket);
+
+                    createAndShowGUI(socket,1,p);
+
                 } catch (IOException | ClassNotFoundException ex) {
                     ex.printStackTrace();
                 }
