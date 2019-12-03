@@ -9,7 +9,7 @@ N. CLAYMAN, 19
 ---------------------ALASKA
 
 DELTA
-5/200
+14/200
 Delta passenger list
 C. WESTMEYER, 19
 ---------------------DELTA
@@ -20,6 +20,24 @@ CHIHO SONG, 18
 CHIHO SONG, 18
 ---------------------DELTA
 CHIOH SONG, 18
+---------------------DELTA
+CHIOH SONG, 18
+---------------------DELTA
+CHIHO SONG, 18
+---------------------DELTA
+CHIHO SONG, 19
+---------------------DELTA
+CHIOH SONG, 18
+---------------------DELTA
+CHIHO SONG, 19
+---------------------DELTA
+A S, 1
+---------------------DELTA
+A 2, 1
+---------------------DELTA
+CHIHO SONG, 19
+---------------------DELTA
+CHIHO SONG, 18
 ---------------------DELTA
 
 SOUTHWEST
