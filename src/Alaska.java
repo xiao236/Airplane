@@ -4,12 +4,15 @@ import java.util.ArrayList;
 public class Alaska implements Airline {
     int currentPassengers;
     int maxPassengers;
-    ArrayList<Passenger> passengers;
+    private ArrayList<Passenger> passengers;
+    private Gate gate;
 
     public Alaska() {
         currentPassengers = 0;
         maxPassengers = 100;
         passengers = new ArrayList<>();
+        gate = new Gate("A");
+
     }
     public void addPassenger(Passenger p) {
         currentPassengers++;

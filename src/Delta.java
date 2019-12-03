@@ -7,13 +7,14 @@ public class Delta implements Airline {
 
     int currentPassengers;
     int maxPassengers;
-    ArrayList<Passenger> passengers;
-
+    private ArrayList<Passenger> passengers;
+    private Gate gate;
 
     public Delta() {
         currentPassengers = 0;
         passengers = new ArrayList<>();
         maxPassengers = 100;
+        gate = new Gate("C");
     }
     public void addPassenger(Passenger p) {
         currentPassengers++;
