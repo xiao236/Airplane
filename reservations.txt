@@ -9,35 +9,49 @@ N. CLAYMAN, 19
 ---------------------ALASKA
 
 DELTA
-14/200
+21/200
 Delta passenger list
 C. WESTMEYER, 19
 ---------------------DELTA
 K. ABHYANKAR, 19
 ---------------------DELTA
-CHIHO SONG, 18
+C. SONG, 18
 ---------------------DELTA
-CHIHO SONG, 18
+C. SONG, 18
 ---------------------DELTA
-CHIOH SONG, 18
+C. SONG, 18
 ---------------------DELTA
-CHIOH SONG, 18
+C. SONG, 18
 ---------------------DELTA
-CHIHO SONG, 18
+C. SONG, 18
 ---------------------DELTA
-CHIHO SONG, 19
+C. SONG, 19
 ---------------------DELTA
-CHIOH SONG, 18
+C. SONG, 18
 ---------------------DELTA
-CHIHO SONG, 19
+C. SONG, 19
 ---------------------DELTA
-A S, 1
+A. S, 1
 ---------------------DELTA
-A 2, 1
+A. 2, 1
 ---------------------DELTA
-CHIHO SONG, 19
+C. SONG, 19
 ---------------------DELTA
-CHIHO SONG, 18
+C. SONG, 18
+---------------------DELTA
+C. SONG, 1
+---------------------DELTA
+C. SONG, 12
+---------------------DELTA
+C. SONG, 1
+---------------------DELTA
+C. SONG, 19
+---------------------DELTA
+C. SONG, 1
+---------------------DELTA
+C. SONG, 11
+---------------------DELTA
+C. 1O, 1
 ---------------------DELTA
 
 SOUTHWEST
