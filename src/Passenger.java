@@ -29,6 +29,6 @@ public class Passenger implements Serializable {
         return age;
     }
     public String initialString() {
-        return firstName.substring(0,1) +". " + lastName + ", " + age;
+        return firstName.substring(0,1).toUpperCase() +". " + lastName.toUpperCase() + ", " + age;
     }
 }
