@@ -1,3 +1,8 @@
+/**
+ * @author Xinyi Xiao, Chiho Song
+ * @version 12/02/2019
+ */
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -15,13 +20,16 @@ public class Southwest implements Airline {
         passengers = new ArrayList<>();
         gate = new Gate("B");
     }
+
     public void addPassenger(Passenger p) {
         currentPassengers++;
         passengers.add(p);
     }
+
     public void preAdd(Passenger p) {
         passengers.add(p);
     }
+
     public String[] passengers() {
         String[] pass = new String[currentPassengers];
         for (int i = 0; i < currentPassengers; i++) {
@@ -29,6 +37,7 @@ public class Southwest implements Airline {
         }
         return pass;
     }
+
     public String toString() {
         String southPass = "";
         for (int i = 0; i < passengers.size(); i++) {
@@ -36,12 +45,15 @@ public class Southwest implements Airline {
         }
         return southPass;
     }
+
     public int getCurrentPassengers() {
         return currentPassengers;
     }
+
     public int getMaxPassengers() {
         return maxPassengers;
     }
+
     public String getPassengers() {
         String pass = "<html>";
         for (int i = 0; i < passengers.size(); i++) {
@@ -50,6 +62,7 @@ public class Southwest implements Airline {
         pass = pass + "</html";
         return pass;
     }
+
     public String retrieve() {
         String ans = "";
         for (int i = 0; i < passengers.size(); i++) {
@@ -57,6 +70,7 @@ public class Southwest implements Airline {
         }
         return ans;
     }
+
     public Gate getGate() {
         return gate;
     }
