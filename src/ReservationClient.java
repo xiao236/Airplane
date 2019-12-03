@@ -81,7 +81,7 @@ public class ReservationClient {
         JLabel jlalaska = new JLabel(AlaskaAd);
         JTextField jt = new JTextField("Delta");
         JTextField jk = new JTextField("0");
-        jldelta.setVisible(false);
+        jldelta.setVisible(true);
         jlsouth.setVisible(false);
         jlalaska.setVisible(false);
         panel2.add(jldelta);
@@ -370,12 +370,16 @@ public class ReservationClient {
                     writer.write(1);
                     writer.newLine();
                     writer.flush();
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                    reader.readLine();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         });
-        JScrollPane scrollPane = new JScrollPane();
+        JLabel textArea = new JLabel();
+        JScrollPane scrollPane = new JScrollPane(textArea);
+        panel2.add(scrollPane);
         panel3.add(button1);
         panel3.add(button2);
         jf.add(panel1, BorderLayout.NORTH);
