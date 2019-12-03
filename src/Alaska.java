@@ -1,3 +1,8 @@
+/**
+ * @author Xinyi Xiao, Chiho Song
+ * @version 12/02/2019
+ */
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -14,10 +19,12 @@ public class Alaska implements Airline {
         gate = new Gate("A");
 
     }
+
     public void addPassenger(Passenger p) {
         currentPassengers++;
         passengers.add(p);
     }
+
     public void preAdd(Passenger p) {
         passengers.add(p);
     }
@@ -29,6 +36,7 @@ public class Alaska implements Airline {
         }
         return pass;
     }
+
     public String toString() {
         String alaskaPass = "";
         for (int i = 0; i < passengers.size(); i++) {
@@ -36,12 +44,15 @@ public class Alaska implements Airline {
         }
         return alaskaPass;
     }
+
     public int getCurrentPassengers() {
         return currentPassengers;
     }
+
     public int getMaxPassengers() {
         return maxPassengers;
     }
+
     public String getPassengers() {
         String pass = "<html>";
         for (int i = 0; i < passengers.size(); i++) {
@@ -50,6 +61,7 @@ public class Alaska implements Airline {
         pass = pass + "</html";
         return pass;
     }
+
     public String retrieve() {
         String ans = "";
         for (int i = 0; i < passengers.size(); i++) {
@@ -57,6 +69,7 @@ public class Alaska implements Airline {
         }
         return ans;
     }
+
     public Gate getGate() {
         return gate;
     }
