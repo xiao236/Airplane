@@ -139,7 +139,10 @@ public class ClientHandler implements Runnable {
                 bw.flush();
                 bw.write(s.toString() + "\n");
                 bw.flush();
-            do {
+            out.write(getList(airline));
+            out.newLine();
+            out.flush();
+            while(true) {
 
                 String input = in.readLine();
                 if (input.equals("0")) {
@@ -148,7 +151,7 @@ public class ClientHandler implements Runnable {
                 out.write(getList(airline));
                 out.newLine();
                 out.flush();
-            } while (true);
+            }
 
 
         } catch (Exception e) {
