@@ -148,7 +148,6 @@ public class ReservationClient {
                         jt.setText("Alaska");
                         break;
                 }
-
             }
         });
 
@@ -197,9 +196,10 @@ public class ReservationClient {
 
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                jf.setVisible(false);
                 JOptionPane.showMessageDialog(null, "Thank you for using the Purdue " +
                         "University Airline Management System!");
-                System.exit(0);
+                return;
             }
         });
         button2.addActionListener(new ActionListener() {
@@ -235,9 +235,10 @@ public class ReservationClient {
         JButton button3 = new JButton("Yes, I want this flight");
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                jf.setVisible(false);
                 JOptionPane.showMessageDialog(null, "Thank you for using the Purdue " +
                         "University Airline Management System!");
-                System.exit(0);
+                return;
             }
         });
         button2.addActionListener(new ActionListener() {
@@ -279,7 +280,7 @@ public class ReservationClient {
 
     private static void createAndShowGUIII(String nameofairline, Socket socket) {
         String[] options1 = {
-                "No", "Yes"
+            "No", "Yes"
         };
         JFrame jf = new JFrame("Purdue University Flight Reservation System");
         jf.setSize(new Dimension(900, 700));
@@ -308,9 +309,10 @@ public class ReservationClient {
 
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                jf.setVisible(false);
                 JOptionPane.showMessageDialog(null, "Thank you for using the Purdue " +
                         "University Airline Management System!");
-                System.exit(0);
+                return;
             }
         });
         button2.addActionListener(new ActionListener() {
@@ -404,10 +406,10 @@ public class ReservationClient {
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-
+                jf.setVisible(false);
                 JOptionPane.showMessageDialog(null, "Thank you for using the Purdue" +
                         " University Airline Management System!");
-                System.exit(0);
+                return;
             }
         });
 
