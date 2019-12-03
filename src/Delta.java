@@ -1,3 +1,8 @@
+/**
+ * @author Xinyi Xiao, Chiho Song
+ * @version 12/02/2019
+ */
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,13 +21,16 @@ public class Delta implements Airline {
         maxPassengers = 100;
         gate = new Gate("C");
     }
+
     public void addPassenger(Passenger p) {
         currentPassengers++;
         passengers.add(p);
     }
+
     public void preAdd(Passenger p) {
         passengers.add(p);
     }
+
     public String[] passengers() {
         String[] pass = new String[currentPassengers];
         for (int i = 0; i < currentPassengers; i++) {
@@ -30,6 +38,7 @@ public class Delta implements Airline {
         }
         return pass;
     }
+
     public String toString() {
         String deltaPass = "";
         for (int i = 0; i < passengers.size(); i++) {
@@ -37,12 +46,15 @@ public class Delta implements Airline {
         }
         return deltaPass;
     }
+
     public int getCurrentPassengers() {
         return currentPassengers;
     }
+
     public int getMaxPassengers() {
         return maxPassengers;
     }
+
     public String getPassengers() {
         String pass = "<html>";
         for (int i = 0; i < passengers.size(); i++) {
@@ -51,6 +63,7 @@ public class Delta implements Airline {
         pass = pass + "</html";
         return pass;
     }
+
     public String retrieve() {
         String ans = "";
         for (int i = 0; i < passengers.size(); i++) {
@@ -58,6 +71,7 @@ public class Delta implements Airline {
         }
         return ans;
     }
+
     public Gate getGate() {
         return gate;
     }

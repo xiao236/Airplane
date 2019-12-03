@@ -1,3 +1,8 @@
+/**
+ * @author Xinyi Xiao, Chiho Song
+ * @version 12/02/2019
+ */
+
 import java.io.IOException;
 import java.io.*;
 import java.net.*;
@@ -8,8 +13,8 @@ public class ReservationServer {
         ServerSocket socket = new ServerSocket(0);
         System.out.printf("<Now serving clients on port %d...>%n", socket.getLocalPort());
 
-        int i=0;
-        while(true){
+        int i = 0;
+        while (true) {
             Socket socket1 = socket.accept();
             i++;
             System.out.printf("<Client %d connected...>%n", i);

@@ -1,3 +1,8 @@
+/**
+ * @author Xinyi Xiao, Chiho Song
+ * @version 12/02/2019
+ */
+
 import java.io.Serializable;
 
 public class BoardingPass implements Serializable {
@@ -16,6 +21,7 @@ public class BoardingPass implements Serializable {
         gate = new Gate("A");
         flightNumber = 0;
     }
+
     public BoardingPass(String airline, String firstName, String lastName, int age, Gate gate) {
         this.airline = airline;
         this.firstName = firstName.toUpperCase();
@@ -23,16 +29,24 @@ public class BoardingPass implements Serializable {
         this.age = age;
         this.gate = gate;
         switch (airline) {
-            case "Delta": flightNumber = 16000; break;
-            case "Alaska": flightNumber = 18000; break;
-            case "Southwest": flightNumber = 20000; break;
+            case "Delta":
+                flightNumber = 16000;
+                break;
+            case "Alaska":
+                flightNumber = 18000;
+                break;
+            case "Southwest":
+                flightNumber = 20000;
+                break;
         }
     }
+
     public String toString() {
         return "<HTML>--------------------------------------------------------------------------------------" +
-                "<br/>BOARDING PASS FOR FLIGHT " + flightNumber + " WITH " + airline + " Airlines<br/>PASSENGER FIRST NAME: " +
+                "<br/>BOARDING PASS FOR FLIGHT " + flightNumber + " WITH " + airline + " Airlines<br/>PASSENGER" +
+                " FIRST NAME: " +
                 firstName + "<br/>PASSENGER LAST NAME: " + lastName + "<br/>PASSENGER AGE: " + age +
-                "<br/>You can now begin boarding at gate " + gate+
+                "<br/>You can now begin boarding at gate " + gate +
                 "<br/>-------------------------------------------------------------------------------------</HTML>";
     }
 }
