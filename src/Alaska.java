@@ -1,11 +1,10 @@
+import java.io.*;
+import java.util.ArrayList;
+
 /**
  * @author Xinyi Xiao, Chiho Song
  * @version 12/02/2019
  */
-
-import java.io.*;
-import java.util.ArrayList;
-
 public class Alaska implements Airline {
     int currentPassengers;
     int maxPassengers;

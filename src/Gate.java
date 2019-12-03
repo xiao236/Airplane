@@ -1,10 +1,10 @@
+import java.io.Serializable;
+import java.util.Random;
+
 /**
  * @author Xinyi Xiao, Chiho Song
  * @version 12/02/2019
  */
-
-import java.io.Serializable;
-import java.util.Random;
 
 public class Gate implements Serializable {
     private String terminal;

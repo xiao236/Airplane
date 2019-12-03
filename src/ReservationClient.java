@@ -1,8 +1,3 @@
-/**
- * @author Xinyi Xiao, Chiho Song
- * @version 12/02/2019
- */
-
 import javax.sound.midi.SysexMessage;
 import javax.swing.*;
 import java.awt.*;
@@ -13,6 +8,10 @@ import java.awt.event.KeyListener;
 import java.io.*;
 import java.net.Socket;
 
+/**
+ * @author Xinyi Xiao, Chiho Song
+ * @version 12/02/2019
+ */
 public class ReservationClient {
     public static void main(String args[]) throws IOException, ClassNotFoundException {
         String nameOfAirline;

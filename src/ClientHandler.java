@@ -1,13 +1,12 @@
-/**
- * @author Xinyi Xiao, Chiho Song
- * @version 12/02/2019
- */
-
 import javax.swing.*;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * @author Xinyi Xiao, Chiho Song
+ * @version 12/02/2019
+ */
 public class ClientHandler implements Runnable {
     Socket socket;
 

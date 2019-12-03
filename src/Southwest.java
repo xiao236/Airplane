@@ -1,13 +1,14 @@
-/**
- * @author Xinyi Xiao, Chiho Song
- * @version 12/02/2019
- */
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Xinyi Xiao, Chiho Song
+ * @version 12/02/2019
+ *
+ */
 public class Southwest implements Airline {
     int currentPassengers;
     int maxPassengers;

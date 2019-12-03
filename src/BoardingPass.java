@@ -1,10 +1,9 @@
+import java.io.Serializable;
+
 /**
  * @author Xinyi Xiao, Chiho Song
  * @version 12/02/2019
  */
-
-import java.io.Serializable;
-
 public class BoardingPass implements Serializable {
     private String airline;
     private String firstName;

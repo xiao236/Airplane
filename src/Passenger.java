@@ -1,10 +1,9 @@
+import java.io.Serializable;
+
 /**
  * @author Xinyi Xiao, Chiho Song
  * @version 12/02/2019
  */
-
-import java.io.Serializable;
-
 public class Passenger implements Serializable {
     private String firstName;
     private String lastName;

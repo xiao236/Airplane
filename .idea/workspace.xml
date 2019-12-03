@@ -3,12 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="146ddf4f-9db4-42bf-b7c1-801eb1be5038" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Airline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Airline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Alaska.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Alaska.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BoardingPass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BoardingPass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Delta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Delta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Passenger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ReservationClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReservationClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReservationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReservationServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Southwest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Southwest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
