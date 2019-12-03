@@ -2,9 +2,9 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Alaska implements Airline {
-    public int currentPassengers;
-    public int maxPassengers;
-    public ArrayList<Passenger> passengers;
+    int currentPassengers;
+    int maxPassengers;
+    ArrayList<Passenger> passengers;
 
     public Alaska() {
         currentPassengers = 0;

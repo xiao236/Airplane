@@ -5,9 +5,10 @@ import java.util.ArrayList;
 
 public class Delta implements Airline {
 
-    public int currentPassengers;
-    public int maxPassengers;
-    public ArrayList<Passenger> passengers;
+    int currentPassengers;
+    int maxPassengers;
+    ArrayList<Passenger> passengers;
+
 
     public Delta() {
         currentPassengers = 0;
