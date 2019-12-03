@@ -9,11 +9,13 @@ N. CLAYMAN, 19
 ---------------------ALASKA
 
 DELTA
-2/200
+3/200
 Delta passenger list
 C. WESTMEYER, 19
 ---------------------DELTA
 K. ABHYANKAR, 19
+---------------------DELTA
+REI XIAO, 18
 ---------------------DELTA
 
 SOUTHWEST
@@ -22,4 +24,3 @@ Southwest passenger list
 C. WESTMEYER, 20
 ---------------------SOUTHWEST
 
-EOF
