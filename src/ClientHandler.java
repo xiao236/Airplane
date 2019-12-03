@@ -61,14 +61,9 @@ public class ClientHandler implements Runnable {
             }
             br.close();
 
-
-            System.out.println(0);
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            System.out.println(1);
-            // open BufferedWriter to send messages to  the server.
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
             out.flush();
-
 
             out.write(d.currentPassengers + ":" + d.maxPassengers + ":" + d.retrieve() + ":" + a.currentPassengers + ":" + a.maxPassengers + ":" + a.retrieve() + ":"
                     + s.currentPassengers + ":" + s.maxPassengers + ":" + s.retrieve());
