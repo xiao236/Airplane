@@ -62,8 +62,6 @@ public class ClientHandler implements Runnable {
             br.close();
 
 
-            ServerSocket serverSocket = new ServerSocket(4242);
-            Socket socket = serverSocket.accept();
             System.out.println(0);
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             System.out.println(1);
