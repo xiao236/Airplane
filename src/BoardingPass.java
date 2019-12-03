@@ -29,8 +29,10 @@ public class BoardingPass implements Serializable {
         }
     }
     public String toString() {
-        return "<HTML>BOARDING PASS FOR FLIGHT " + flightNumber + " WITH " + airline + " Airlines<br/>PASSENGER FIRST NAME: " +
+        return "<HTML>--------------------------------------------------------------------------------------" +
+                "<br/>BOARDING PASS FOR FLIGHT " + flightNumber + " WITH " + airline + " Airlines<br/>PASSENGER FIRST NAME: " +
                 firstName + "<br/>PASSENGER LAST NAME: " + lastName + "<br/>PASSENGER AGE: " + age +
-                "<br/>You can now begin boarding at gate " + gate+"<HTML>";
+                "<br/>You can now begin boarding at gate " + gate+
+                "<br/>-------------------------------------------------------------------------------------</HTML>";
     }
 }
