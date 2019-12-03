@@ -174,6 +174,7 @@ public class ClientHandler implements Runnable {
             ans = ans + br.readLine() + ":";
             br.readLine();
         }
+        br.close();
         return ans;
     }
 }
