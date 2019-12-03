@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -109,38 +110,66 @@ public class ClientHandler implements Runnable {
                     break;
                 default: bp = new BoardingPass();
             }
-            out.write(bp.toString());
-            out.newLine();
-            out.flush();
-            BufferedWriter bw = new BufferedWriter(new FileWriter("reservations.txt"));
-            bw.flush();
-            bw.write("ALASKA\n");
-            bw.flush();
-            bw.write(a.currentPassengers + "/" + a.maxPassengers + "\n");
-            bw.flush();
-            bw.write("Alaska passenger list\n");
-            bw.flush();
-            bw.write(a.toString() + "\n");
-            bw.flush();
-            bw.write("DELTA\n");
-            bw.flush();
-            bw.write(d.currentPassengers + "/" + d.maxPassengers + "\n");
-            bw.flush();
-            bw.write("Delta passenger list\n");
-            bw.flush();
-            bw.write(d.toString() + "\n");
-            bw.flush();
-            bw.write("SOUTHWEST\n");
-            bw.flush();
-            bw.write(s.currentPassengers + "/" + s.maxPassengers + "\n");
-            bw.flush();
-            bw.write("Southwest passenger list\n");
-            bw.flush();
-            bw.write(s.toString() + "\n");
-            bw.flush();
+            do {
+                out.write(bp.toString());
+                out.newLine();
+                out.flush();
+                BufferedWriter bw = new BufferedWriter(new FileWriter("reservations.txt"));
+                bw.flush();
+                bw.write("ALASKA\n");
+                bw.flush();
+                bw.write(a.currentPassengers + "/" + a.maxPassengers + "\n");
+                bw.flush();
+                bw.write("Alaska passenger list\n");
+                bw.flush();
+                bw.write(a.toString() + "\n");
+                bw.flush();
+                bw.write("DELTA\n");
+                bw.flush();
+                bw.write(d.currentPassengers + "/" + d.maxPassengers + "\n");
+                bw.flush();
+                bw.write("Delta passenger list\n");
+                bw.flush();
+                bw.write(d.toString() + "\n");
+                bw.flush();
+                bw.write("SOUTHWEST\n");
+                bw.flush();
+                bw.write(s.currentPassengers + "/" + s.maxPassengers + "\n");
+                bw.flush();
+                bw.write("Southwest passenger list\n");
+                bw.flush();
+                bw.write(s.toString() + "\n");
+                bw.flush();
+
+                String input = in.readLine();
+                if (input.equals("0")) {
+                    break;
+                }
+                out.write(getList(airline));
+                out.newLine();
+                out.flush();
+            } while (true);
+
+
         } catch (Exception e) {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Connection lost with client.");
         }
 
+    }
+    public String getList(String airline) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader("reservations.txt"));
+        String ans = "";
+        String next = br.readLine();
+        while (!(next.equalsIgnoreCase(airline))) {
+            next = br.readLine();
+        }
+        next = br.readLine();
+        next = next.substring(0, next.indexOf("/"));
+        br.readLine();
+        for (int i = 0; i < Integer.parseInt(next); i++) {
+            ans = ans + br.readLine();
+            br.readLine();
+        }
+        return ans;
     }
 }
