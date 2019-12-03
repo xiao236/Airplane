@@ -241,9 +241,10 @@ public class ReservationClient {
             public void actionPerformed(ActionEvent e) {
                 jf.setVisible(false);
                 try {
-                    ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-                    oos.writeObject(nameofairline);
-                    oos.flush();
+                    BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+                    writer.write(nameofairline);
+                    writer.newLine();
+                    writer.flush();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
@@ -306,9 +307,10 @@ public class ReservationClient {
                 }else{
                     jf.setVisible(false);
                     try {
-                        ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-                        Passenger p = new Passenger(jt1.getText(), jt2.getText(), Integer.parseInt(jt3.getText()));
-                        oos.writeObject(jt1.getText()+" "+ jt2.getText()+" "+ jt3.getText());
+                        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+                        writer.write(jt1.getText()+" "+ jt2.getText()+" "+ jt3.getText());
+                        writer.newLine();
+                        writer.flush();
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
@@ -340,8 +342,23 @@ public class ReservationClient {
         JPanel panel3 = new JPanel();
         JLabel choose = new JLabel("<html>Flight data displaying for "+nameofairline+"" +
                 " Airlines<br/>Enjoy your flight!<br/>Flight is now boarding at Gate </html>");
+        choose.setFont(choose.getFont().deriveFont(32.0f));
         panel1.add(choose);
+        JButton button1 = new JButton("Exit");
+        JButton button2 = new JButton("Next");
 
+        button1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null,"Thank you for using the Purdue University Airline Management System!");
+                System.exit(0);
+            }
+        });
+        button2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
         //JScrollPane scrollPane = new JScrollPane(textArea);
 
         jf.add(panel1, BorderLayout.NORTH);
