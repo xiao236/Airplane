@@ -109,6 +109,10 @@ public class ClientHandler implements Runnable {
             pw.println(s.currentPassengers + "/" + s.maxPassengers);
             pw.println("Southwest passenger list");
             pw.println(s.toString());
+
+
+            Gate g = new Gate();
+
         } catch (Exception e){
             e.printStackTrace();
         }

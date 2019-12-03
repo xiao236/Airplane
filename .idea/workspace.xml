@@ -47,7 +47,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ReservationClient">
+  <component name="RunManager" selected="Application.ReservationServer">
     <configuration name="ReservationClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ReservationClient" />
       <module name="Airplane" />
@@ -82,8 +82,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ReservationClient" />
         <item itemvalue="Application.ReservationServer" />
+        <item itemvalue="Application.ReservationClient" />
       </list>
     </recent_temporary>
   </component>
@@ -98,6 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1574446050789</updated>
       <workItem from="1574446748458" duration="7000" />
+      <workItem from="1575331666929" duration="3299000" />
     </task>
     <servers />
   </component>
