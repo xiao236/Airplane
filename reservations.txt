@@ -9,13 +9,31 @@ N. CLAYMAN, 19
 ---------------------ALASKA
 
 DELTA
-3/200
+12/200
 Delta passenger list
 C. WESTMEYER, 19
 ---------------------DELTA
 K. ABHYANKAR, 19
 ---------------------DELTA
-c. song, 1
+C. SONG, 1
+---------------------DELTA
+C. SONG, 1
+---------------------DELTA
+C. SONG, 1
+---------------------DELTA
+C. SONG, 1
+---------------------DELTA
+C. SONG, 1
+---------------------DELTA
+C. SONG, 1
+---------------------DELTA
+C. SONG, 1
+---------------------DELTA
+C. SONG, 1
+---------------------DELTA
+C. SONG, 1
+---------------------DELTA
+C. SONG, 12
 ---------------------DELTA
 
 SOUTHWEST

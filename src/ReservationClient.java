@@ -361,11 +361,11 @@ public class ReservationClient {
         JButton button2 = new JButton("Refresh Flight Status");
         JTextArea textArea = new JTextArea(a);
         textArea.setText(a);
-        textArea.setPreferredSize(new Dimension(500,100));
+        textArea.setPreferredSize(new Dimension(200,200));
         JScrollPane scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         JPanel panel4 = new JPanel();
         panel4.add(scrollPane);
-        scrollPane.setSize(new Dimension(500,100));
+        scrollPane.setPreferredSize(new Dimension(250,150));
         JPanel inputPanel = new JPanel();
         JLabel boarding = new JLabel(pass);
         inputPanel.setLayout(new FlowLayout());

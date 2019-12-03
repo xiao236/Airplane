@@ -144,7 +144,6 @@ public class ClientHandler implements Runnable {
             out.newLine();
             out.flush();
             while(true) {
-
                 String input = in.readLine();
                 if (input.equals("0")) {
                     break;
