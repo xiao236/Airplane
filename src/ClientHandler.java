@@ -77,26 +77,33 @@ public class ClientHandler implements Runnable {
             out.newLine();
             out.flush();
 
+
             String airline = in.readLine();
-            System.out.println(airline);
             String passengerInfo = in.readLine();
-            System.out.println(passengerInfo);
             String[] pass = passengerInfo.split(" ");
             Passenger p = new Passenger(pass[0], pass[1], Integer.parseInt(pass[2]));
-            System.out.println(p.toString());
             switch(airline) {
                 case "Delta":
                     bp = new BoardingPass("Delta", p.getFirstName(), p.getLastName(), p.getAge(), d.getGate());
+                    out.write(d.getGate().toString());
+                    out.newLine();
+                    out.flush();
                     p.setBoardingPass(bp);
                     d.addPassenger(p);
                     break;
                 case "Alaska":
                     bp = new BoardingPass("Alaska", p.getFirstName(), p.getLastName(), p.getAge(), a.getGate());
+                    out.write(a.getGate().toString());
+                    out.newLine();
+                    out.flush();
                     p.setBoardingPass(bp);
                     a.addPassenger(p);
                     break;
                 case "Southwest":
                     bp = new BoardingPass("Southwest", p.getFirstName(), p.getLastName(), p.getAge(), s.getGate());
+                    out.write(s.getGate().toString());
+                    out.newLine();
+                    out.flush();
                     p.setBoardingPass(bp);
                     s.addPassenger(p);
                     break;

@@ -9,4 +9,7 @@ public class Gate implements Serializable {
         this.terminal = terminal;
         gate = 1 + rand.nextInt(18);
     }
+    public String toString() {
+        return terminal + gate;
+    }
 }
