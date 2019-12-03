@@ -171,7 +171,7 @@ public class ClientHandler implements Runnable {
         next = next.substring(0, next.indexOf("/"));
         br.readLine();
         for (int i = 0; i < Integer.parseInt(next); i++) {
-            ans = ans + br.readLine();
+            ans = ans + br.readLine() + ":";
             br.readLine();
         }
         return ans;
