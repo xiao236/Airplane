@@ -162,7 +162,7 @@ public class ClientHandler implements Runnable {
     }
     public String getList(String airline) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("reservations.txt"));
-        String ans = "";
+        String ans = "<html>";
         String next = br.readLine();
         while (!(next.equalsIgnoreCase(airline))) {
             next = br.readLine();
@@ -171,9 +171,9 @@ public class ClientHandler implements Runnable {
         next = next.substring(0, next.indexOf("/"));
         br.readLine();
         for (int i = 0; i < Integer.parseInt(next); i++) {
-            ans = ans + br.readLine();
+            ans = ans + br.readLine() + "<br/>";
             br.readLine();
         }
-        return ans;
+        return ans + "</html>";
     }
 }
