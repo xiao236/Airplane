@@ -4,14 +4,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Southwest implements Airline {
-    public int currentPassengers;
-    public int maxPassengers;
-    public ArrayList<Passenger> passengers;
+    int currentPassengers;
+    int maxPassengers;
+    private ArrayList<Passenger> passengers;
+    private Gate gate;
 
     public Southwest() {
         currentPassengers = 0;
         maxPassengers = 100;
         passengers = new ArrayList<>();
+        gate = new Gate("B");
     }
     public void addPassenger(Passenger p) {
         currentPassengers++;
@@ -54,5 +56,8 @@ public class Southwest implements Airline {
             ans = ans + passengers.get(i).toString() + ";";
         }
         return ans;
+    }
+    public Gate getGate() {
+        return gate;
     }
 }

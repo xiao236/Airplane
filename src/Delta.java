@@ -5,14 +5,16 @@ import java.util.ArrayList;
 
 public class Delta implements Airline {
 
-    public int currentPassengers;
-    public int maxPassengers;
-    public ArrayList<Passenger> passengers;
+    int currentPassengers;
+    int maxPassengers;
+    private ArrayList<Passenger> passengers;
+    private Gate gate;
 
     public Delta() {
         currentPassengers = 0;
         passengers = new ArrayList<>();
         maxPassengers = 100;
+        gate = new Gate("C");
     }
     public void addPassenger(Passenger p) {
         currentPassengers++;
@@ -55,5 +57,8 @@ public class Delta implements Airline {
             ans = ans + passengers.get(i).toString() + ";";
         }
         return ans;
+    }
+    public Gate getGate() {
+        return gate;
     }
 }
