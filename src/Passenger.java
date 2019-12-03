@@ -19,4 +19,13 @@ public class Passenger implements Serializable {
         p = p.toUpperCase();
         return p;
     }
+    public String getFirstName() {
+        return firstName;
+    }
+    public String getLastName() {
+        return lastName;
+    }
+    public int getAge() {
+        return age;
+    }
 }

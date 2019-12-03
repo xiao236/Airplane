@@ -20,6 +20,7 @@ public class ClientHandler implements Runnable {
             br = new BufferedReader(new FileReader("reservations.txt"));
             br.readLine();
             String next = br.readLine();
+            BoardingPass bp;
             String[] hold = next.split("/");
             a.currentPassengers = Integer.parseInt(hold[0]);
             a.maxPassengers = Integer.parseInt(hold[1]);
@@ -28,6 +29,8 @@ public class ClientHandler implements Runnable {
                 next = br.readLine();
                 hold = next.split(" ");
                 Passenger p = new Passenger(hold[0], hold[1].substring(0, hold[1].length()-1), Integer.parseInt(hold[2]));
+                bp = new BoardingPass("Alaska", p.getFirstName(), p.getLastName(), p.getAge(), a.getGate());
+                p.setBoardingPass(bp);
                 a.preAdd(p);
                 br.readLine();
             }
@@ -42,6 +45,8 @@ public class ClientHandler implements Runnable {
                 next = br.readLine();
                 hold = next.split(" ");
                 Passenger p = new Passenger(hold[0], hold[1].substring(0, hold[1].length()-1), Integer.parseInt(hold[2]));
+                bp = new BoardingPass("Delta", p.getFirstName(), p.getLastName(), p.getAge(), d.getGate());
+                p.setBoardingPass(bp);
                 d.preAdd(p);
                 br.readLine();
             }
@@ -56,6 +61,8 @@ public class ClientHandler implements Runnable {
                 next = br.readLine();
                 hold = next.split(" ");
                 Passenger p = new Passenger(hold[0], hold[1].substring(0, hold[1].length()-1), Integer.parseInt(hold[2]));
+                bp = new BoardingPass("Delta", p.getFirstName(), p.getLastName(), p.getAge(), s.getGate());
+                p.setBoardingPass(bp);
                 s.preAdd(p);
                 br.readLine();
             }
@@ -76,12 +83,18 @@ public class ClientHandler implements Runnable {
             Passenger p = new Passenger(pass[0], pass[1], Integer.parseInt(pass[2]));
             switch(airline) {
                 case "Delta":
+                    bp = new BoardingPass("Delta", p.getFirstName(), p.getLastName(), p.getAge(), d.getGate());
+                    p.setBoardingPass(bp);
                     d.addPassenger(p);
                     break;
                 case "Alaska":
+                    bp = new BoardingPass("Alaska", p.getFirstName(), p.getLastName(), p.getAge(), a.getGate());
+                    p.setBoardingPass(bp);
                     a.addPassenger(p);
                     break;
                 case "Southwest":
+                    bp = new BoardingPass("Southwest", p.getFirstName(), p.getLastName(), p.getAge(), s.getGate());
+                    p.setBoardingPass(bp);
                     s.addPassenger(p);
                     break;
             }
