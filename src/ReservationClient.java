@@ -346,6 +346,7 @@ public class ReservationClient {
         JPanel panel3 = new JPanel();
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         String gate = reader.readLine();
+        String pass = reader.readLine();
         JLabel choose = new JLabel("<html>Flight data displaying for "+nameofairline+"" +
                 " Airlines<br/>Enjoy your flight!<br/>Flight is now boarding at Gate "+gate+"</html>");
         choose.setFont(choose.getFont().deriveFont(32.0f));
@@ -385,9 +386,20 @@ public class ReservationClient {
                 }
             }
         });
-        JLabel textArea = new JLabel();
+        JLabel textArea = new JLabel("<html>HELLO<br/>hi<br/>hi</html>");
         JScrollPane scrollPane = new JScrollPane(textArea);
-        panel2.add(scrollPane);
+        JPanel panel4 = new JPanel();
+        panel4.add(scrollPane);
+        JPanel inputPanel = new JPanel();
+        JLabel boarding = new JLabel(pass);
+        inputPanel.setLayout(new FlowLayout());
+        inputPanel.add(boarding);
+        inputPanel.setMaximumSize(new Dimension(Integer.MAX_VALUE, 75));
+        inputPanel.setLayout(new BoxLayout(inputPanel, BoxLayout.X_AXIS));
+        panel2.add(panel4);
+        panel2.setLayout(new BorderLayout());
+        panel2.add(inputPanel);
+
         panel3.add(button1);
         panel3.add(button2);
         jf.add(panel1, BorderLayout.NORTH);
