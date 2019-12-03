@@ -315,7 +315,11 @@ public class ReservationClient {
                         ex.printStackTrace();
                     }
 
-                    createAndShowGUIIII(nameofairline,socket);
+                    try {
+                        createAndShowGUIIII(nameofairline,socket);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
                 }
 
 
@@ -332,20 +336,22 @@ public class ReservationClient {
         jf.setVisible(true);
     }
 
-    private static void createAndShowGUIIII(String nameofairline,Socket socket) {
+    private static void createAndShowGUIIII(String nameofairline,Socket socket) throws IOException {
         JFrame jf = new JFrame("Purdue University Flight Reservation System");
         jf.setSize(new Dimension(900, 700));
         JPanel panel1 = new JPanel();
-        panel1.setPreferredSize(new Dimension(900, 100));
+        panel1.setPreferredSize(new Dimension(900, 200));
         JPanel panel2 = new JPanel();
         panel2.setSize(900, 500);
         JPanel panel3 = new JPanel();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        String gate = reader.readLine();
         JLabel choose = new JLabel("<html>Flight data displaying for "+nameofairline+"" +
-                " Airlines<br/>Enjoy your flight!<br/>Flight is now boarding at Gate </html>");
+                " Airlines<br/>Enjoy your flight!<br/>Flight is now boarding at Gate "+gate+"</html>");
         choose.setFont(choose.getFont().deriveFont(32.0f));
         panel1.add(choose);
         JButton button1 = new JButton("Exit");
-        JButton button2 = new JButton("Next");
+        JButton button2 = new JButton("Refresh Flight Status");
 
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -362,6 +368,7 @@ public class ReservationClient {
                 System.exit(0);
             }
         });
+
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -370,8 +377,9 @@ public class ReservationClient {
                     writer.write(1);
                     writer.newLine();
                     writer.flush();
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                    reader.readLine();
+
+                    String a =reader.readLine();
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
