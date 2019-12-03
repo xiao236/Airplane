@@ -32,7 +32,7 @@ public class Southwest implements Airline {
     public String toString() {
         String southPass = "";
         for (int i = 0; i < passengers.size(); i++) {
-            southPass = southPass + passengers.get(i).toString() + "\n---------------------SOUTHWEST\n";
+            southPass = southPass + passengers.get(i).initialString() + "\n---------------------SOUTHWEST\n";
         }
         return southPass;
     }

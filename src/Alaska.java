@@ -32,7 +32,7 @@ public class Alaska implements Airline {
     public String toString() {
         String alaskaPass = "";
         for (int i = 0; i < passengers.size(); i++) {
-            alaskaPass = alaskaPass + passengers.get(i).toString() + "\n---------------------ALASKA\n";
+            alaskaPass = alaskaPass + passengers.get(i).initialString() + "\n---------------------ALASKA\n";
         }
         return alaskaPass;
     }

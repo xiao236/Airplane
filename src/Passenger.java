@@ -6,7 +6,7 @@ public class Passenger implements Serializable {
     private BoardingPass bp;
     private int age;
     public Passenger(String firstName, String lastName, int age) {
-        this.firstName = firstName.substring(0,1) + ".";
+        this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
     }
@@ -27,5 +27,8 @@ public class Passenger implements Serializable {
     }
     public int getAge() {
         return age;
+    }
+    public String initialString() {
+        return firstName.substring(0,1) +". " + lastName + ", " + age;
     }
 }

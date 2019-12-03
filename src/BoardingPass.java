@@ -18,8 +18,8 @@ public class BoardingPass implements Serializable {
     }
     public BoardingPass(String airline, String firstName, String lastName, int age, Gate gate) {
         this.airline = airline;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstName = firstName.toUpperCase();
+        this.lastName = lastName.toUpperCase();
         this.age = age;
         this.gate = gate;
         switch (airline) {
