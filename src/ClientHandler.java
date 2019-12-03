@@ -121,7 +121,7 @@ public class ClientHandler implements Runnable {
                 bw.flush();
                 bw.write("Alaska passenger list\n");
                 bw.flush();
-                bw.write(a.toString() + "\n");
+                bw.write(a.toString().toUpperCase() + "\n");
                 bw.flush();
                 bw.write("DELTA\n");
                 bw.flush();
@@ -129,7 +129,7 @@ public class ClientHandler implements Runnable {
                 bw.flush();
                 bw.write("Delta passenger list\n");
                 bw.flush();
-                bw.write(d.toString() + "\n");
+                bw.write(d.toString().toUpperCase() + "\n");
                 bw.flush();
                 bw.write("SOUTHWEST\n");
                 bw.flush();
@@ -137,7 +137,7 @@ public class ClientHandler implements Runnable {
                 bw.flush();
                 bw.write("Southwest passenger list\n");
                 bw.flush();
-                bw.write(s.toString() + "\n");
+                bw.write(s.toString().toUpperCase() + "\n");
                 bw.flush();
                 bw.close();
             out.write(getList(airline));
