@@ -67,7 +67,6 @@ public class ReservationClient {
                 "We also have comfortable seats and free WiFi.<br/>" +
                 "We hope you choose Alaska Airlines for your next itinerary.</html>";
         JFrame jf = new JFrame("Purdue University Flight Reservation System");
-
         jf.setPreferredSize(new Dimension(900, 700));
         jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         JComboBox<String> airlineList = new JComboBox<>(airlines);
@@ -87,6 +86,7 @@ public class ReservationClient {
         panel2.add(jldelta);
         panel2.add(jlsouth);
         panel2.add(jlalaska);
+
         airlineList.setSelectedIndex(0);
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         // open BufferedWriter to send messages to  the server.
