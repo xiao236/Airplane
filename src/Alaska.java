@@ -57,5 +57,8 @@ public class Alaska implements Airline {
         }
         return ans;
     }
+    public Gate getGate() {
+        return gate;
+    }
 
 }

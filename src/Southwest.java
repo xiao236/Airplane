@@ -57,4 +57,7 @@ public class Southwest implements Airline {
         }
         return ans;
     }
+    public Gate getGate() {
+        return gate;
+    }
 }

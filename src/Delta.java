@@ -58,4 +58,7 @@ public class Delta implements Airline {
         }
         return ans;
     }
+    public Gate getGate() {
+        return gate;
+    }
 }
