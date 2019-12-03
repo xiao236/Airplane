@@ -110,7 +110,6 @@ public class ClientHandler implements Runnable {
                     break;
                 default: bp = new BoardingPass();
             }
-            do {
                 out.write(bp.toString());
                 out.newLine();
                 out.flush();
@@ -140,6 +139,7 @@ public class ClientHandler implements Runnable {
                 bw.flush();
                 bw.write(s.toString() + "\n");
                 bw.flush();
+            do {
 
                 String input = in.readLine();
                 if (input.equals("0")) {
