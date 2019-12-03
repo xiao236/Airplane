@@ -139,6 +139,7 @@ public class ClientHandler implements Runnable {
                 bw.flush();
                 bw.write(s.toString() + "\n");
                 bw.flush();
+                bw.close();
             out.write(getList(airline));
             out.newLine();
             out.flush();
