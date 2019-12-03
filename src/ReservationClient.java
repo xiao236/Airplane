@@ -348,16 +348,21 @@ public class ReservationClient {
         String gate = reader.readLine();
         String pass = reader.readLine();
         String a = reader.readLine();
-        System.out.println(a);
+        String[] people = a.split(":");
+        a = "";
+        for (int i = 0; i < people.length; i++) {
+            a = a + people[i] + "\n";
+        }
         JLabel choose = new JLabel("<html>Flight data displaying for "+nameofairline+"" +
                 " Airlines<br/>Enjoy your flight!<br/>Flight is now boarding at Gate "+gate+"</html>");
         choose.setFont(choose.getFont().deriveFont(32.0f));
         panel1.add(choose);
         JButton button1 = new JButton("Exit");
         JButton button2 = new JButton("Refresh Flight Status");
-        JLabel textArea = new JLabel(a);
+        JTextArea textArea = new JTextArea(a);
+        textArea.setText(a);
         textArea.setPreferredSize(new Dimension(500,100));
-        JScrollPane scrollPane = new JScrollPane(textArea);
+        JScrollPane scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         JPanel panel4 = new JPanel();
         panel4.add(scrollPane);
         scrollPane.setSize(new Dimension(500,100));
@@ -395,6 +400,11 @@ public class ReservationClient {
                     writer.flush();
 
                     String a =reader.readLine();
+                    String[] people = a.split(":");
+                    a = "";
+                    for (int i = 0; i < people.length; i++) {
+                        a = a + people[i] + "\n";
+                    }
                     textArea.setText(a);
                 } catch (IOException e) {
                     e.printStackTrace();
