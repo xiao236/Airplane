@@ -13,7 +13,7 @@ import java.net.Socket;
  * @version 12/02/2019
  */
 public class ReservationClient {
-    public static void main(String args[]) throws IOException, ClassNotFoundException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         String nameOfAirline;
         String[] options1 = {
                 "Exit", "Book a Flight"
@@ -63,18 +63,18 @@ public class ReservationClient {
         String[] airlines = {
                 "Delta", "Alaska", "Southwest"
         };
-        String DeltaAd = "<html>Delta Airlines is proud to be one of the five premier Airlines at " +
+        String deltaAd = "<html>Delta Airlines is proud to be one of the five premier Airlines at " +
                 "Purdue University.<br/>" +
                 "We are extremely happy to offer exceptional services, with free limited WiFi for all customers.<br/>" +
                 "Passengers who use T-Mobile as a cell phone carrier get additional benefits.<br/>" +
                 "We are also happy to offer power outlets in each seat for passenger use.<br/>" +
                 "We hope you choose to fly Delta as your next Airline.</html>";
-        String SouthwestAd = "<html>Southwest Airlines is proud to offer flights to Purdue University.<br/>" +
+        String southwestAd = "<html>Southwest Airlines is proud to offer flights to Purdue University.<br/>" +
                 "We are happy to offer free in flight wifi, as well as our amazing snacks.<br/>" +
                 "In addition, we offer flights for much cheaper than other airlines, and offer two free " +
                 "checked bags<br/>" +
                 "We hope you choose Southwest for your next flight</html>";
-        String AlaskaAd = "<html>Alaska Airlines is proud to serve the strong and knowledgeable Boilermakers from " +
+        String alaskaAd = "<html>Alaska Airlines is proud to serve the strong and knowledgeable Boilermakers from " +
                 "Purdue University.<br/>" +
                 "We primarily fly westward, and often have stops in Alaska and California.<br/>" +
                 "We have first class amneties, even in coach class.<br/>" +
@@ -90,9 +90,9 @@ public class ReservationClient {
         JPanel panel2 = new JPanel();
         panel2.setSize(900, 500);
         JPanel panel3 = new JPanel();
-        JLabel jldelta = new JLabel(DeltaAd);
-        JLabel jlsouth = new JLabel(SouthwestAd);
-        JLabel jlalaska = new JLabel(AlaskaAd);
+        JLabel jldelta = new JLabel(deltaAd);
+        JLabel jlsouth = new JLabel(southwestAd);
+        JLabel jlalaska = new JLabel(alaskaAd);
         JTextField jt = new JTextField("Delta");
         JTextField jk = new JTextField("0");
         jldelta.setVisible(true);
@@ -147,8 +147,6 @@ public class ReservationClient {
                         jlsouth.setVisible(false);
                         jt.setText("Alaska");
                         break;
-                    default:
-                        ;
                 }
 
             }

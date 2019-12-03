@@ -16,8 +16,8 @@ public class Passenger implements Serializable {
         this.age = age;
     }
 
-    public void setBoardingPass(BoardingPass bp) {
-        this.bp = bp;
+    public void setBoardingPass(BoardingPass b) {
+        this.bp = b;
     }
 
     public String toString() {
